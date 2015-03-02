@@ -14,7 +14,6 @@ class Simple extends Actividad
 {
     public function excecute()
     {
-        return "coto puto";
     }
     
 }

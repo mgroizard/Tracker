@@ -161,9 +161,9 @@ class UsuarioController extends BaseController implements BaseControllerInterfac
                $encoder = $factory->getEncoder($entity);
                $pwd = $encoder->encodePassword($entity->getPassword(), $entity->getSalt());
                $entity->setPassword($pwd);
-               
+               $entity->setHerramienta($em->getReference('TrackerBundle:Herramienta',1));
                $em->persist($entity);
-               
+
                try {
                    $em->flush();
                }

@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Aleste\TrackerBundle\Entity\Proyecto;
-use Aleste\TrackerBundle\Entity\AgregarProyecto;
+use Aleste\TrackerBundle\Command\AgregarProyecto;
 use Aleste\TrackerBundle\Entity\ActualizarProyecto;
 use Aleste\TrackerBundle\Entity\EliminarProyecto;
 use Aleste\TrackerBundle\Form\Type\ProyectoType;
@@ -93,9 +93,14 @@ class ProyectoController extends Controller
         $form = $this->createForm(new ProyectoType(), $proyecto);
 
         if ($form->handleRequest($request)->isValid()) {
-            $actividad = new AgregarProyecto($this->getDoctrine()->getManager());
-            $actividad->execute($proyecto);            
-
+            
+            $em = $this->getDoctrine()->getManager();
+            
+            $actividad = new AgregarProyecto($em,$proyecto);
+            $actividad->execute();            
+            
+            $em->flush();
+            
             $this->get('session')->getFlashBag()->add('success', $this->get('translator')->trans('_datos_creados_exito'));
 
             return $this->redirect($this->generateUrl('proyecto_show', array('id' => $proyecto->getId())));
@@ -136,8 +141,9 @@ class ProyectoController extends Controller
         $deleteForm = $this->createDeleteForm($proyecto->getId());
         $editForm = $this->createForm(new ProyectoType(), $proyecto);
         if ($editForm->handleRequest($request)->isValid()) {
-            $actividad = new ActualizarProyecto($this->getDoctrine()->getManager());
-            $actividad->execute($proyecto);
+            $em = $this->getDoctrine()->getManager();
+            $actividad = new ActualizarProyecto($em);
+            $actividad->execute();
             
             $this->get('session')->getFlashBag()->add('success', 'flash.update.success');
             return $this->redirect($this->generateUrl('proyecto_edit', array('id' => $proyecto->getId())));
