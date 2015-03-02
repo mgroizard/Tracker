@@ -53,7 +53,6 @@ class EstadoTipoRequerimiento
      */
     private $herramienta;
            
-    
     /**
      * Constructor
      */

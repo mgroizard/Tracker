@@ -17,7 +17,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *                        "actividad"              = "Actividad",
  *                        "simple"                 = "Simple",
  *                        "compuesta"              = "Compuesta",
- *                        "agregarProyecto"        = "AgregarProyecto",
+ *                        "agregarProyecto"        = "\Aleste\TrackerBundle\Command\AgregarProyecto",
  *                        "agregarRequerimiento"   = "AgregarRequerimiento",
  *                        "agregarUsuario"         = "AgregarUsuario" ,
  *                        "borrarUsuario"          = "BorrarUsuario",
@@ -70,6 +70,8 @@ class Actividad implements ActividadInterface
      * })
      */
     private $herramienta;
+    
+    private $object;
     
     public function excecute(){}
     
@@ -191,5 +193,28 @@ class Actividad implements ActividadInterface
     public function getHerramienta()
     {
         return $this->herramienta;
+    }
+    
+    /**
+     * Set object
+     *
+     * @param string $obj
+     * @return Actividad
+     */
+    public function setObject($obj)
+    {
+        $this->object = $obj;
+
+        return $this;
+    }
+
+    /**
+     * Get object
+     *
+     * @return string 
+     */
+    public function getObject()
+    {
+        return $this->object;
     }
 }
