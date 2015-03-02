@@ -253,4 +253,27 @@ class Usuario implements UserInterface, \Serializable
     {
         $this->roles->removeElement($roles);
     }
+
+    /**
+     * Set herramienta
+     *
+     * @param \Aleste\TrackerBundle\Entity\Herramienta $herramienta
+     * @return Usuario
+     */
+    public function setHerramienta(\Aleste\TrackerBundle\Entity\Herramienta $herramienta)
+    {
+        $this->herramienta = $herramienta;
+
+        return $this;
+    }
+
+    /**
+     * Get herramienta
+     *
+     * @return \Aleste\TrackerBundle\Entity\Herramienta 
+     */
+    public function getHerramienta()
+    {
+        return $this->herramienta;
+    }
 }

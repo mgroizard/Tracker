@@ -9,7 +9,6 @@
 /build/
 /vendor/
 /bin/
-/composer.phar
 /web/assetic/
 /web/css/
 /web/js/
