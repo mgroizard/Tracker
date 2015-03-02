@@ -1,0 +1,11 @@
+<tr>
+    <th>Archivos Adjuntos</th>
+    <td>
+      {% for archivo in entity.adjuntos %}
+      <div>
+        <strong>{{archivo.nombre}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+        <hr>
+        </div>
+      {% endfor %}&nbsp;
+    </td>
+</tr>

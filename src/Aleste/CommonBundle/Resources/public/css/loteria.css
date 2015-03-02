@@ -1,0 +1,96 @@
+.required
+{
+    font-style: italic;
+}
+
+.required:after{
+    content: "(*)";
+}
+
+.margin-left-10{
+    margin-left: 10px !important;
+}
+
+.audienciasCreadas{
+    padding: 10px;
+    position: absolute;
+    top: 200;
+    left: 70%;
+    border: solid 1px lightgray;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-gradient(linear, 0% 0%, 0% 100%, from(#000000), to(#000000));
+}
+
+.form-inline label{
+    width: 200px;
+}
+
+.flat{
+    border-style:none;
+}
+
+.divMarginLeft220{
+    margin-left: 200px;
+}
+
+.label-large{
+    width: 70% !important;
+}
+
+.divMarginLeft33p{
+    margin-left: 33%;
+}
+
+.form-acciones {
+    float: left;
+    margin: 0px;
+    margin-right: 2px;
+}
+
+.ufSentencia{
+    color:blue;
+    font-style: italic;
+    margin-left: 10px;
+}
+
+.modulosSentencia{
+    color:red;
+    font-style: italic;
+    margin-left: 5px;
+}
+
+.tdCenter{
+    text-align: center !important;
+}
+
+.cursor{
+    cursor: pointer !important;
+}
+
+.input-datepicker {
+  width: 100px;
+}
+
+.fontWidget{
+    font-size: small !important;
+}
+
+.fontAuditoria{
+    font-size: small !important;
+}
+
+.tdAcciones{
+    width: 50px !important;
+}
+
+.tdAuth{
+    width: 100px;
+}
+
+.imgCentered{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

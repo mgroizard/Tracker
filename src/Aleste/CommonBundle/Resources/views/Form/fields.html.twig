@@ -1,0 +1,7 @@
+{% block date_widget %}
+{% spaceless %}
+   {% set type = type|default('text') %}
+   <input type="{{ type }}" class="form-control datepicker" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+{% endspaceless %}
+{% endblock date_widget %}
+

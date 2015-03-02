@@ -1,0 +1,87 @@
+{% extends "CommonBundle::layout.html.twig" %}
+
+{% block titulo %}
+  <div class="container">
+     <div class="pull-right">
+         {% include 'CommonBundle:Botones:boton.volver.listado.html.twig' with onclickVolver %}
+     </div>
+     <h4>Revisiones de "{{entity}}"</h4>  
+{% endblock %}
+
+{% block contenido %}
+<script type="text/javascript">
+  $(document).ready(function(){
+	       $( "#accordion" ).accordion( {animated: 'bounceslide',collapsible: true});
+   });
+
+    $(document).ready(function(){
+    	$(function() {
+		$("#dialog").dialog({
+			autoOpen: false,
+			show: "blind",
+                        hide: "blind",
+			width: 600,
+                        modal: true,
+                        resizable: false
+		});
+	}); 
+    });
+    
+    function showDatoAsociado(url,title){
+         $("#dialog").html('<img src="{{ asset('bundles/genemuform/images/ajax-loader.gif')}}" alt="Cargando" title="Cargando"/>');
+	 $("#dialog").load(url);
+	 $("#dialog").dialog("option", "title",title );
+	 $("#dialog").dialog("open");
+	 
+	 return false;
+    }
+  </script>
+    {% set cantidad = 30 %}
+    <div id="dialog" name="dialog" class="ui-widget"></div>
+    <div id="accordion">
+    {% for revision in revisiones %}
+       {% if loop.index <= cantidad %}
+       <h3><a href="#" >Revisión N°&nbsp;{{ revision.version }}</a></h3>
+       <div>
+       <table class="table table-bordered table-striped table-hover">
+            <tr>
+              <th width="15%;">Acción:</th>
+              <td>{{ revision.action }}</td>
+            </tr>
+            <tr>
+              <th>Revisión:</th>
+              <td>
+                 {{ revision.version }}&nbsp; 
+                   <a href="{{ path(pathRevertir, { 'id': entity.id,'revision': revision.version  }) }}"'>
+                     <img src="{{ asset('bundles/juzgado/images/famfamfam/arrow_left.png')}}" alt="Volver a la Revisión" title=" Volver a la Revisión"/></a>
+                   &nbsp; Volver a la Revisión 
+              </td>
+            </tr>
+            <tr>
+              <th>Usuario:</th>
+              <td>{{ revision.username }}</td>
+            </tr>
+            <tr>
+              <th>Fecha del Registro:</th>
+              <td>{{ revision.loggedAt|date('d/m/Y [H:i:s]')}}</td>
+            </tr>
+	    {% block datosRevision %}
+ 	     <tr>
+	      <th>Nombre:</th>
+	      <td>
+	       {% if revision.getData['nombre'] is defined %}
+		 {{revision.getData['nombre']}}
+	       {% else %}  
+		  Sin Cambios
+	       {% endif %}
+	      </td>
+ 	    </tr>
+	   {% endblock %}
+      </table>
+     </div>
+       {% endif %}
+    {% endfor %}
+    </div>
+    <br><br>
+</div><!-- <div class="container"-->    
+{% endblock %}

@@ -1,0 +1,20 @@
+services:
+    aleste.twig.aleste_custom_filters_extension:
+        class: Aleste\TrackerBundle\Twig\CustomFiltersExtension
+        tags:
+            - { name: twig.extension }
+    aleste.util.pdf:
+        class: Aleste\TrackerBundle\Util\PdfService
+        arguments: [@white_october.tcpdf, @kernel]
+    aleste.util.common:
+        class: Aleste\TrackerBundle\Util\CommonFunctions
+    aleste.command.avisos:
+        class: Aleste\TrackerBundle\Command\AvisosCommand
+        arguments:
+            em: "@doctrine.orm.entity_manager"
+        tags:
+            -  { name: console.command }
+    kernel.listener.aleste_ajax_exception:
+        class: Aleste\TrackerBundle\EventListener\AjaxExceptionListener
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onCoreException, priority: 250 }

@@ -1,0 +1,8 @@
+#ruta de administración del sistema
+SeguridadBundle_usuario:
+    resource: "@SeguridadBundle/Resources/config/routing/sistema/usuario.yml"
+    prefix:   /usuario
+
+SeguridadBundle_usuarioperfil:
+    resource: "@SeguridadBundle/Resources/config/routing/sistema/rol.yml"
+    prefix:   /rol

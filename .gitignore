@@ -1,0 +1,25 @@
+/web/bundles/
+/app/bootstrap.php.cache
+/app/cache/*
+/app/spool/*
+/app/config/parameters.yml
+/app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+/build/
+/vendor/
+/bin/
+/composer.phar
+/web/assetic/
+/web/css/
+/web/js/
+/web/uploads/
+
+# sublimetext
+/*.sublime-project
+*.sublime-workspace
+
+.*
+!.gitignore
+*~
+

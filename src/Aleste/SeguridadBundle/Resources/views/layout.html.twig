@@ -1,0 +1,26 @@
+{% extends "CommonBundle::layout.html.twig" %}
+
+{% block otherStylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/common/css/seguridad.css') }}" />    
+    <!--   Estilos del Captcha para el Login-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/captcha/jquery/QapTcha.jquery.css') }}" media="screen" />
+{% endblock %}
+
+{% block otherJavascripts %}
+<script type="text/javascript" src="{{ asset('bundles/captcha/jquery/jquery.js')}}"></script>
+<script type="text/javascript" src="{{ asset('bundles/captcha/jquery/jquery-ui.js')}}"></script>
+<script type="text/javascript" src="{{ asset('bundles/captcha/jquery/jquery.ui.touch.js')}}"></script>
+<script type="text/javascript" src="{{ asset('bundles/captcha/jquery/QapTcha.jquery.js')}}"></script>
+ 
+<script type="text/javascript">
+    $(document).ready(function(){
+    $('.QapTcha').QapTcha({disabledSubmit:true,
+			   autoRevert:true,
+			   autoSubmit:false,
+			   PHPfile:'{{ asset('bundles/captcha/php/Qaptcha.jquery.php')}}',
+			   txtLock : '{{'_captcha_cerrado'|trans}}',
+			   txtUnlock : '{{'_captcha_abierto'|trans}}',
+			   });
+    });
+</script>
+{% endblock %}

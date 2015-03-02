@@ -1,0 +1,12 @@
+<tr>
+   <th>{{'_fecha_creado'|trans}}:</th>
+   <td>{{entity.usuarioCreo}}<br>{{ entity.fechaCreacion|date('d/m/Y [H:i:s]') }}</td>
+</tr>
+<tr>
+  <th>{{'_fecha_modificado'|trans}}:</th>
+  <td>{% if entity.fechaModificacion %}
+       {{entity.usuarioModifico}}<br>
+       {{ entity.fechaModificacion|date('d/m/Y [H:i:s]') }}
+      {% endif%}&nbsp;
+  </td>
+</tr>    

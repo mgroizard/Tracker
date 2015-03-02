@@ -1,0 +1,29 @@
+{% extends "CommonBundle::layout.html.twig" %}
+
+{% if form is defined %}
+    {% form_theme form 'CommonBundle:Form:fields.html.twig' %}
+{% endif %}
+
+{% block titulo %}
+ <div class="container">
+    {% if onclickVolver is defined%}
+    <div class="pull-right">
+       {% include 'CommonBundle:Botones:boton.volver.listado.html.twig' with onclickVolver %}
+    </div>
+    {% endif %}
+    <h4>{% block tituloNuevo %}{% endblock %}</h4>
+{% endblock %}
+
+{% block contenido %}
+    {% block informacionFormulario %}{% endblock%}
+    <form id="{{ form.vars.name }}" name="{{ form.vars.name }}" class="form-horizontal well" action="{{actionForm}}" method="post" {% if hasFiles is defined %}enctype="multipart/form-data"{% endif %}{% if onSubmit is defined %} onsubmit="{{onSubmit}}"{% endif %}>
+      {{form_widget(form)}}
+      {% block extras %}{% endblock%}
+      <br>
+      <div class="col-sm-offset-2">
+       {% include 'CommonBundle:Botones:boton.crear.html.twig' %}
+      </div>
+    </form>
+</div><!-- <div class="container"-->
+{% block form_javascripts%}{% endblock %}
+{% endblock %}

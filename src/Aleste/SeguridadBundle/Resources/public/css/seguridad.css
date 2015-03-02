@@ -1,0 +1,66 @@
+.required
+{
+    font-style: italic;
+}
+
+.required:after{
+    content: "(*)";
+}
+
+.form-inline label{
+    width: 200px;
+}
+
+.flat{
+    border-style:none;
+}
+
+.label-large{
+    width: 70% !important;
+}
+
+.form-acciones {
+    float: left;
+    margin: 0px;
+    margin-right: 2px;
+}
+
+.ufSentencia{
+    color:blue;
+    font-style: italic;
+    margin-left: 10px;
+}
+
+.modulosSentencia{
+    color:red;
+    font-style: italic;
+    margin-left: 5px;
+}
+
+.tdCenter{
+    text-align: center !important;
+}
+
+.cursor{
+    cursor: pointer !important;
+}
+
+.input-datepicker {
+  width: 100px;
+}
+
+.fontWidget{
+    font-size: small !important;
+}
+
+.fontAuditoria{
+    font-size: small !important;
+}
+
+.tdAcciones{
+    width: 50px !important;
+}
+
+.tdAuth{
+    width: 100px;
+}

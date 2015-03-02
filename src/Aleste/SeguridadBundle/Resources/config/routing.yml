@@ -1,0 +1,5 @@
+#ruta de administracion de usuarios del sistema
+
+SeguridadBundle_administracion_sistema:
+    resource: "@SeguridadBundle/Resources/config/routing/admin/admin.sistema.yml"
+    prefix:   /

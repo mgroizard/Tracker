@@ -1,0 +1,35 @@
+{% extends "TrackerBundle::layout.html.twig" %}
+
+{% block content %}
+ <div class="container">
+    <div class="row">
+      <h4 class="pull-left">{{'_ver_usuario'|trans}} "{{entity}}"</h4>
+      <div class="pull-right">
+      <a class="btn btn-warning" href="{{ path('usuario_filter') }}">
+	<i class="fa fa-arrow-left"></i> {{ '_volver_listado'|trans }}
+      </a>
+      <a class="btn btn-info" href="{{ path('usuario_new') }}">
+        <i class="fa fa-plus"></i> {{ '_nuevo'|trans }}
+      </a>
+      </div>
+     </div>
+     <table class="table table-bordered table-striped table-hover">
+        {% include 'SeguridadBundle:Usuario:datos.show.html.twig'%}
+     </table>   
+      {% if is_granted('ROLE_ADMIN')%}
+       <form class="pull-left" action="{{ path('usuario_edit',{'id':entity.id})}}" method="post">
+         <button class="btn btn-info" type="submit">
+            {{'_editar'|trans}}
+          </button>
+       </form>
+     {% endif %}
+     {% if is_granted('ROLE_ADMIN')%}
+       <form class="pull-left" action="{{ path('usuario_delete',{'id':entity.id})}}" method="post">
+          {{ form_widget(delete_form) }}
+           <button class="btn btn-danger" onclick="return confirm('{{'_desea_eliminar' |trans}} \'{{entity}}\'')" type="submit">
+            {{'_eliminar'|trans}}
+          </button>
+       </form>   
+     {% endif %} 
+</div><!-- <div class="container"-->
+{% endblock %}

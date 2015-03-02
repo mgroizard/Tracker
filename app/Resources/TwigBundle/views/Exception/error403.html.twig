@@ -1,0 +1,33 @@
+{% extends 'GestionBundle::layout.html.twig' %}
+{% block navbar %} {% include 'GestionBundle:Gestion:_menu_solo.html.twig' %}{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <br>
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+					<div class="panel-body">
+					<div class="row">
+					    <div class="col-md-10"><br><br><legend><i class="ace-icon fa fa-lock icon-animated-lock bigger-125"></i> Error 403 detectado.</legend> </div>
+					    <div class="col-md-2"> <i class="fa fa-times-circle  fa-5x red"></i></div>
+					</div>
+					<div class="row">
+					    <div class="col-md-12">
+					    <br>
+					    <p>
+					        Sr. Usuario se ha detectado un error (código 403) lo que significa que Ud. no posee los permisos necesarios para efectuar esta operación. Por favor vuela al <a href="{{ path('homepage') }}">inicio</a> e intente otra operación.</p><p>Ante cualquier duda consulte con un Administrador del Sistema.</p>
+					        <br>
+					        Muchas gracias.
+
+					    </div>
+					</div>
+					</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% if app.user %}
+ <div class="container media">
+    <div class="panel panel-info">
+       <div class="panel-body">
+         <span class="pull-left text-info">{{'_desarrollado_por'|trans}} L.M.R. & R.B. & M.E.G. &copy;</span>
+         <span class="pull-right">{{'_fecha'|trans}} : <span id="hora_servidor">{{ 'now'|date('d/m/Y [H:i]')}}</span></span>
+       </div>
+    </div>
+ </div>   
+ <script type="text/javascript">
+    window.onload=hora;
+    function hora()
+    {
+        setTimeout("hora()",60000);
+        $.get('{{path('hora_servidor')}}',null,function (data) {$('#hora_servidor').html(data);});
+    }
+ </script>
+{% endif %}
+

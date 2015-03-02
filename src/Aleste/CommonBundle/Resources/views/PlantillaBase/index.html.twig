@@ -1,0 +1,73 @@
+{% extends "CommonBundle::layout.html.twig" %}
+
+{% block titulo %}
+  <div class="container">
+    <div class="pull-left">
+       <h4>{% block tituloListado %}{% endblock %}</h4>
+    </div>
+    {% if permisoNuevo is defined and is_granted(permisoNuevo) %}
+        <div class="pull-right">
+	 {% block acciones %}
+           {% include 'CommonBundle:Botones:boton.nuevo.html.twig' with onclickNuevo %}
+	 {% endblock%}
+       </div>
+    {% endif %}
+    {% if onclickVolver is defined%}
+	<div class="pull-right">
+           {% include 'CommonBundle:Botones:boton.volver.listado.html.twig' with onclickVolver %}
+        </div>
+    {% endif %}    
+{% endblock %}
+
+{% block filtro %}
+  {% if pathFiltro is defined %}
+    <div id='filtroFormularioToggle' class="pull-right">
+      {% include 'CommonBundle:Botones:boton.busqueda.html.twig' with {'onclick':'$("#filtroFormulario").toggle();' } %}
+    </div>  
+    <div id='filtroFormulario'>
+     <br><br>
+        <form class="form-inline well" action='{{pathFiltro}}' method='post'>
+               <div class="control-group">
+                  <span class="col-lg-2"><label class="control-label" for='nombre'>{% if campoFiltro is defined %}{{campoFiltro}}{% else %}Nombre{% endif %}</label></span>
+                  <span class="col-lg-4"><input type='text' class="form-control" id='nombre' name='nombre' value='{% if filtro is defined %}{{filtro}}{% endif %}'/></span>
+               </div> 
+              <div class="control-group">
+                  {% include 'CommonBundle:Botones:boton.busqueda.formulario.html.twig' with {'subclass':'primary'} %}
+                  {% include 'CommonBundle:Botones:boton.reset.formulario.html.twig' with {'enlace': pathReset, 'subclass':'default'} %}
+              </div>
+         </form>
+     </div>
+    {% endif %}
+{% endblock %}    
+
+{% block contenido %}
+  <script type="text/javascript">
+     $(document).ready(function(){
+	    $(function() {
+		    $("#deleteWindow").dialog({
+			    autoOpen: false,
+			    show: "blind",
+			    hide: "blind",
+			    modal: true,
+                            width: 500,
+		    });
+	    }); 
+     });
+     
+    function deleteWindow(url)
+    {
+      $("#deleteWindow").html('<img src="{{ asset('bundles/common/images/ajax-loader.gif')}}" alt="{{'_cargando'|trans}}" title="{{'_cargando'|trans}}"/>');
+      $("#deleteWindow").dialog("option", "title","{{'_eliminar'|trans}}");
+      $("#deleteWindow").dialog("open");
+      $("#deleteWindow").load(url);
+    }
+    {% if not filtro is defined %}
+      $("#filtroFormulario").toggle();
+    {% endif %}
+  </script>
+  <div id="deleteWindow" name="deleteWindow" class="ui-widget"></div>
+  {% block tablaListado %} {% endblock %}
+  {{ knp_pagination_render(entities) }}
+  <ul class="pagination pull-right"><li><span>{{'_total_registros'|trans}}</span></li><li><span><strong>{{entities.getTotalItemCount}}</strong></span></li></ul> 
+</div><!-- <div class="container"-->
+{% endblock %}

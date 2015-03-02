@@ -1,0 +1,34 @@
+{% extends 'GestionBundle::layout.html.twig' %}
+{% block navbar %} {% include 'GestionBundle:Gestion:_menu_solo.html.twig' %}{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <br>
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+					<div class="panel-body">
+					<div class="row">
+					    <div class="col-md-10"><br><br><legend><i class="ace-icon fa fa-wrench icon-animated-wrench bigger-125"></i> Error detectado.</legend></div>
+					    <div class="col-md-2"> <i class="fa fa-times-circle  fa-5x red"></i></div>
+					</div>
+					<div class="row">
+					    <div class="col-md-12">
+					    <br>
+					    <p>
+					        Sr. Usuario se ha detectado un error inesperado. Por favor intene realizar la operación nuevamente ingresando desde <a href="{{ path('homepage') }}">aquí</a>. </p><p>Si el problema persiste, por favor comuníquese con el Administrador del sistema. </p>
+					        <br>
+					        Muchas gracias.
+
+					    </div>
+					</div>
+					</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,20 @@
+<tr>
+  <th width="15%;">Id:</th>
+  <td>{{ entity.id }}</td>
+</tr>
+<tr>
+  <th>{{'_nombre'|trans}}:</th>
+  <td>{{ entity.persona}}</td>
+</tr>
+<tr>
+  <th>{{'_nombre_usuario'|trans}}:</th>
+  <td>{{ entity.usuario }}</td>
+</tr>
+<tr>
+ <th>{{'_perfiles_asignados'|trans}}:</th>
+  <td>
+   {%for perfil in entity.roles %}
+    &bull;&nbsp;{{perfil}}<br>
+   {% endfor %}
+  </td>
+</tr>

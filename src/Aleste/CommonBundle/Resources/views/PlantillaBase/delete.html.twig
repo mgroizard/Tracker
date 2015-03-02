@@ -1,0 +1,16 @@
+{% extends "CommonBundle::ajax_layout.html.twig" %}
+
+{% block list %}
+  <div  class="alert alert-danger">
+    {{'_desea_eliminar'|trans}} "{{entity}}"?
+  </div>
+{% endblock %}
+
+{% block form %}
+     <form action="{{action}}" method="post" >
+        {{ form_widget(delete_form) }}
+        <button class="btn btn-danger" type="submit">
+            {{'_eliminar'|trans}}
+        </button>
+     </form>      
+{% endblock %}

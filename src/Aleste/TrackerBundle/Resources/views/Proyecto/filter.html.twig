@@ -1,0 +1,17 @@
+
+{% form_theme form 'AlesteGeneratorBundle:widget:fields.html.twig' %}
+<button type="button" class="btn btn-default btn-sm filter" data-toggle="collapse" data-target="#filter">Filtros <i class="fa fa-angle-{{ app.session.get('filter.proyecto') ? 'right' : 'down' }}"></i></button>
+<div id="filter" class="collapse {% if app.session.get('filter.proyecto') %} in{% endif %}">
+	<div class="well well-sm bs-component col-lg-6">
+		    <form method="get" action="">
+		        {{ form_widget(form) }}
+		        <br>
+		        <p class="btn-group">
+		            <button class="btn btn-primary btn-sm" type="submit" name="submit-filter"><i class="fa fa-filter"></i> Filtrar</button>
+		            <a class="btn btn-default btn-sm" href="?reset-filter"><i class="fa fa-times"></i> Limpiar</a>
+		        </p>
+		    </form>
+	</div>
+</div>
+<br>
+<br>

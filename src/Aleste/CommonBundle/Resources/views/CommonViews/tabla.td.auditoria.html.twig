@@ -1,0 +1,12 @@
+<td>
+  <div class="fontAuditoria">
+   <div class="text-success">
+     {{entity.usuarioCreo}}&nbsp;{{ entity.fechaCreacion|date('d/m/Y [H:i:s]') }} 
+   </div>
+   {% if entity.fechaModificacion %}
+     <div class="text-info">
+      {{entity.usuarioModifico}}&nbsp;{{ entity.fechaModificacion|date('d/m/Y [H:i:s]') }}
+     </div> 
+   {% endif %}
+  </div>
+</td>

@@ -1,0 +1,26 @@
+{% extends 'TrackerBundle::layout.html.twig' %}
+{% block navbar %} {% include 'TrackerBundle:Gestion:_menu_solo.html.twig' %}{% endblock %}
+
+{% block content %} 
+    <div class="container-fluid">
+        <div class="row">   
+            <br>
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">                 
+                    {% if response.exception == null %}
+                        {% if response.success == 'true' %}
+                            {% include 'TrackerBundle:Default:_acuse_exitoso.html.twig' %}
+                        {% else %}
+                            {% include 'TrackerBundle:Default:_acuse_incorrecto.html.twig' %}
+                        {% endif %}
+                    {% else %}
+                        {% include 'TrackerBundle:Default:_acuse_error.html.twig' %}
+                    {% endif %}
+
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

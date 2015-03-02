@@ -1,0 +1,12 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+<div class="row">
+	<div class="col-md-12">
+		<div class="alert alert-danger">
+			El token de recuperación de contraseña ya fué utilizado. Si olvidó su contraseña vuelva a iniciar el proceso de recuperación desde <a href="{{path('fos_user_resetting_request')}}">aquí</a>.
+		</div>		
+	</div>
+</div>
+
+{% endblock %}

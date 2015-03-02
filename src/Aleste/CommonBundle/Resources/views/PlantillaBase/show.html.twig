@@ -1,0 +1,39 @@
+{% extends "CommonBundle::layout.html.twig" %}
+
+{% block titulo %}
+<div class="container">
+     <div class="pull-right">
+        {% include 'CommonBundle:Botones:boton.volver.listado.html.twig' with onclickVolver %}
+        {% if onclickNuevo is defined %}
+          {% if is_granted(permisoNuevo)%}
+              {% include 'CommonBundle:Botones:boton.nuevo.html.twig' with onclickNuevo %}
+          {% endif %}
+         {% endif %}
+     </div>
+     <h4>{% block tituloShow %}{% endblock %}</h4>
+{% endblock %}
+
+{% block contenido %}
+
+   <table class="table table-bordered table-striped table-hover">
+      {% block datosShow %}{% endblock %}
+   </table>
+   {% block datos_show_extras %}{% endblock %} 
+     {% if actionFormEdit is defined %}
+      {% if is_granted(permisoEditar)%}
+       <form class="pull-left" action="{{ actionFormEdit}}" method="post">
+           {% include 'CommonBundle:Botones:boton.editar.html.twig' %} 
+       </form>
+     {% endif %}
+    {% endif %}
+    {% if actionFormDelete is defined %}
+     {% if is_granted(permisoBorrar)%}
+       <form action="{{actionFormDelete}}" method="post" style="width: 35%;float: left;">
+          {{ form_widget(delete_form) }}
+          {% set onclick = {'onclick':'return confirm("'~ '_desea_eliminar' |trans ~'")','type':'submit' } %}
+          {% include 'CommonBundle:Botones:boton.borrar.html.twig' with onclick %}
+       </form>
+      {% endif %}
+     {% endif %} 
+</div><!-- <div class="container"-->
+{% endblock %}

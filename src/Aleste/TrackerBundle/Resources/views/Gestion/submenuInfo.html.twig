@@ -1,0 +1,82 @@
+<li class="green">
+  <a data-toggle="dropdown" class="dropdown-toggle" href="#" title="Documentos pendientes de Acuse">
+    <i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
+    <span class="badge badge-success">
+
+    {% set cantidadSinAcuse = cantidadSinAcuse|merge(cantidadSinAcuseExpedientes) %}
+    {% set titulo = "Documentos sin Acuse" %}
+    {% if (cantidadSinAcuse|length) > 5 %}
+      5+
+    {% else %}
+      {{ cantidadSinAcuse|length}}
+      {% if cantidadSinAcuse|length == 1%}
+        {% set titulo = "Documento sin Acuse" %}
+      {% endif %}
+    {% endif %}
+
+    </span>
+  </a>
+  <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+      <li class="dropdown-header">
+        <i class="ace-icon fa fa-envelope-o"></i>
+        {{ cantidadSinAcuse|length}} {{titulo}}
+      </li>
+
+      <li class="dropdown-content" style="position: relative;"><div class="scroll-track" style="display: block; height: 200px;"><div class="scroll-bar" style="height: 111px; top: 0px;"></div></div><div class="scroll-content" style="max-height: 200px;">
+                  <ul class="dropdown-menu dropdown-navbar">
+                    {% for doc in cantidadSinAcuse|slice(0,5)  %}
+                      <li>
+                      {% if doc.isExpediente == false %}
+                        {% set showPath = 'gestion_documento_show_ingreso' %}
+                        {% if doc.tipoMovimiento == 'E' %}
+                          {% set showPath = 'gestion_documento_show_egreso' %}
+                        {% endif %}
+                        {% set texto = doc.numero ~ " - " ~ doc.asunto %}
+                      {% else %}
+                        {% set showPath = 'gestion_documento_show_expediente' %}
+                        {% set texto = doc.numeroExpediente ~ " - " ~ doc.asunto %}
+                      {% endif %}
+
+                      <a href="{{path(showPath, {'id':doc.id})}}">
+
+                        <span class="msg-body">
+                          <span class="msg-title">
+                            <span class="green">{{doc.tipoDocumento.abreviatura}}</span>
+                              {{texto}}
+                          </span>
+
+                          <span class="msg-time">
+                            <i class="ace-icon fa fa-clock-o"></i>
+                            <span>{{doc.ultimoMovimiento.tiempotransCurrido}}</span>
+                          </span>
+
+                        </span>
+                      </a>
+                    </li>
+                    {% endfor %}
+
+
+
+                  </ul>
+                </div></li>
+
+                <li class="dropdown-footer">
+                  <a href="{{path('gestion_documento')}}">
+                    Ir a la Bandeja de Documentos
+                    <i class="ace-icon fa fa-arrow-right"></i>
+                  </a>
+                </li>
+              </ul>
+</li>
+{# <li class="grey">
+<a data-toggle="dropdown" class="dropdown-toggle" href="#" title="Tareas, otro">
+  <i class="fa fa-tasks"></i>
+  <span class="badge badge-grey">{{cantidadGenerados}}</span>
+</a>
+</li>
+<li class="purple">
+  <a data-toggle="dropdown" class="dropdown-toggle" href="#" title="Alertas">
+    <i class="ace-icon fa fa-bell icon-animated-bell"></i>
+    <span class="badge badge-important">{{cantidadEnProceso}}</span>
+  </a>
+</li> #}

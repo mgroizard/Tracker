@@ -1,0 +1,58 @@
+usuario:
+    pattern:  /
+    defaults: { _controller: "SeguridadBundle:Usuario:index" }
+
+usuario_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SeguridadBundle:Usuario:show" }
+
+usuario_view:
+    pattern:  /{id}/view
+    defaults: { _controller: "SeguridadBundle:Usuario:view" }
+
+usuario_new:
+    pattern:  /new
+    defaults: { _controller: "SeguridadBundle:Usuario:new" }
+
+usuario_create:
+    pattern:  /create
+    defaults: { _controller: "SeguridadBundle:Usuario:create" }
+    requirements: { _method: post }
+
+usuario_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SeguridadBundle:Usuario:edit" }
+    
+usuario_reset_password:
+    pattern:  /user/password/edit
+    defaults: { _controller: "SeguridadBundle:Usuario:resetPassword" }
+    
+usuario_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SeguridadBundle:Usuario:update" }
+    requirements: { _method: post }
+
+usuario_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SeguridadBundle:Usuario:delete" }
+    requirements: { _method: post }
+
+usuario_list_delete:
+    pattern:  /{id}/list/delete
+    defaults: { _controller: "SeguridadBundle:Usuario:deleteList" }
+
+usuario_filter:
+    pattern:  /filter
+    defaults: { _controller: "SeguridadBundle:Usuario:filter" }
+    
+usuario_revisiones:
+    pattern:  /{id}/revisiones
+    defaults: { _controller: "SeguridadBundle:Usuario:revisiones" }
+
+usuario_revisiones_limitada:
+    pattern:  /{id}/revisiones/{cantidad}/cantidad
+    defaults: { _controller: "SeguridadBundle:Usuario:revisionesLimited" }
+
+usuario_revision_revertir:
+    pattern:  /{id}/revisiones/{revision}/revertir
+    defaults: { _controller: "SeguridadBundle:Usuario:revert" }

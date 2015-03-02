@@ -1,0 +1,27 @@
+<tr>
+  <th width="15%;">Id:</th>
+  <td>{{ entity.id }}</td>
+</tr>
+<tr>
+  <th>{{'_nombre'|trans}}:</th>
+  <td>{{ entity.nombre }}</td>
+</tr>
+<tr>
+  <th>{{'_usuarios_asignados'|trans}}:</th>
+  <td>
+    <table class="table table-bordered table-striped table-hover">
+      <thead>
+          <tr>
+            <th>{{'_usuario'|trans}}</th>
+          </tr>
+      </thead>
+      <tbody>
+        {%for usuario in entity.usuarios %}
+          <tr>
+            <td><a href="{{path('usuario_edit',{'id':usuario.id})}}" target="_blank">{{usuario.usuario}}</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </td>
+</tr>

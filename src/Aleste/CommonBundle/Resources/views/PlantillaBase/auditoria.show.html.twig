@@ -1,0 +1,16 @@
+<tr>
+  <th>{{'_creado_por'|trans}}:</th>
+  <td>{{ entity.usuarioCreo }}</td>
+</tr>
+<tr>
+  <th>{{'_fecha_creado'|trans}}:</th>
+  <td>{% if entity.createdAt %}{{ entity.createdAt|date('d/m/Y [H:i:s]') }}{% endif %}</td>
+</tr>
+<tr>
+  <th>{{'_modificado_por'|trans}}:</th>
+  <td>{{ entity.usuarioModifico }}&nbsp;</td>
+</tr>
+<tr>
+  <th>{{'_fecha_modificado'|trans}}:</th>
+  <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('d/m/Y [H:i:s]') }}{% endif%}&nbsp;</td>
+</tr>

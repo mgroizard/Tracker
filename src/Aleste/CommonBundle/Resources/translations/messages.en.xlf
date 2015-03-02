@@ -1,0 +1,361 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <!-- traducciones genéricas -->
+            <trans-unit id="_nuevo">
+                <source>_nuevo</source>
+                <target>New</target>
+            </trans-unit>
+            <trans-unit id="_borrar">
+                <source>_borrar</source>
+                <target>Delete</target>
+            </trans-unit>
+            <trans-unit id="_eliminar">
+                <source>_eliminar</source>
+                <target>Delete</target>
+            </trans-unit>
+            <trans-unit id="_volver_listado">
+                <source>_volver_listado</source>
+                <target>Return to List</target>
+            </trans-unit>
+            <trans-unit id="_cambiar">
+                <source>_cambiar</source>
+                <target>Change</target>
+            </trans-unit>            
+            <trans-unit id="_busqueda">
+                <source>_busqueda</source>
+                <target>Search</target>
+            </trans-unit>
+            <trans-unit id="_crear">
+                <source>_crear</source>
+                <target>Create</target>
+            </trans-unit>
+            <trans-unit id="_crear_y_nuevo">
+                <source>_crear_y_nuevo</source>
+                <target>Create And New</target>
+            </trans-unit>
+            <trans-unit id="_guardar_y_nuevo">
+                <source>_guardar_y_nuevo</source>
+                <target>Save And New</target>
+            </trans-unit>
+            <trans-unit id="_editar">
+                <source>_editar</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="_visar">
+                <source>_visar</source>
+                <target>Check</target>
+            </trans-unit>
+            <trans-unit id="_guardar">
+                <source>_guardar</source>
+                <target>Save</target>
+            </trans-unit>
+            <trans-unit id="_imprimir">
+                <source>_imprimir</source>
+                <target>Print</target>
+            </trans-unit>
+            <trans-unit id="_nombre">
+                <source>_nombre</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="_ver">
+                <source>_ver</source>
+                <target>View</target>
+            </trans-unit>
+            <trans-unit id="_resetear">
+                <source>_resetear</source>
+                <target>Reset</target>
+            </trans-unit>                   
+            <trans-unit id="_descripcion">
+                <source>_descripcion</source>
+                <target>Description</target>
+            </trans-unit>
+            <trans-unit id="_cargando">
+                <source>_cargando</source>
+                <target>Loading</target>
+            </trans-unit>
+            <trans-unit id="_codigo_postal">
+                <source>_codigo_postal</source>
+                <target>Postal Code</target>
+            </trans-unit>
+            <trans-unit id="_idiomas">
+                <source>_idiomas</source>
+                <target>Languages</target>
+            </trans-unit>
+            <trans-unit id="_español">
+                <source>_español</source>
+                <target>Español</target>
+            </trans-unit>
+            <trans-unit id="_ingles">
+                <source>_ingles</source>
+                <target>English</target>
+            </trans-unit>
+            <trans-unit id="_cambiar_idioma">
+                <source>_cambiar_idioma</source>
+                <target>Change Language</target>
+            </trans-unit>
+            <trans-unit id="_hora_inicio">
+                <source>_hora_inicio</source>
+                <target>Start Time</target>
+            </trans-unit>
+            <trans-unit id="_hora_fin">
+                <source>_hora_fin</source>
+                <target>End Time</target>
+            </trans-unit>            
+            <trans-unit id="_activo">
+                <source>_activo</source>
+                <target>Active</target>
+            </trans-unit>
+            <trans-unit id="_datos_actualizados_exito">
+                <source>_datos_actualizados_exito</source>
+                <target>Data Updated Successfully</target>
+            </trans-unit>
+            <trans-unit id="_datos_creados_exito">
+                <source>_datos_creados_exito</source>
+                <target>Data Created Successfully</target>
+            </trans-unit>
+            <trans-unit id="_error_datos_formulario">
+                <source>_error_datos_formulario</source>
+                <target>Error in Form Data</target>
+            </trans-unit>                        
+            <trans-unit id="_dato_eliminado_exito">
+                <source>_dato_eliminado_exito</source>
+                <target>Data Deleted Successfully</target>
+            </trans-unit>             
+             <!-- traducciones de pantallas -->
+            <trans-unit id="_total_registros">
+                <source>_total_registros</source>
+                <target>Total Records</target>
+            </trans-unit>
+            <trans-unit id="_acciones">
+                <source>_acciones</source>
+                <target>Actions</target>
+            </trans-unit>
+            <!-- traducciones de TipoDocumento -->
+            <trans-unit id="_crear_tipo_documento">
+                <source>_crear_tipo_documento</source>
+                <target>Create Identity Document</target>
+            </trans-unit>
+            <trans-unit id="_editar_tipo_documento">
+                <source>_editar_tipo_documento</source>
+                <target>Edit Identity Document</target>
+            </trans-unit>
+            <trans-unit id="_ver_tipo_documento">
+                <source>_ver_tipo_documento</source>
+                <target>View Identity Document</target>
+            </trans-unit>           
+            <trans-unit id="_listado_tipo_documento">
+                <source>_listado_tipo_documento</source>
+                <target>Identity Document List</target>
+            </trans-unit>
+            <trans-unit id="_tipo_documento">
+                <source>_tipo_documento</source>
+                <target>Identity Document</target>
+            </trans-unit>
+            <!-- traducciones de Localidad -->
+            <trans-unit id="_crear_localidad">
+                <source>_crear_localidad</source>
+                <target>Create City</target>
+            </trans-unit>
+            <trans-unit id="_editar_localidad">
+                <source>_editar_localidad</source>
+                <target>Edit City</target>
+            </trans-unit>
+            <trans-unit id="_ver_localidad">
+                <source>_ver_localidad</source>
+                <target>View City</target>
+            </trans-unit>           
+            <trans-unit id="_listado_localidad">
+                <source>_listado_localidad</source>
+                <target>City List</target>
+            </trans-unit>
+            <trans-unit id="_localidad">
+                <source>_localidad</source>
+                <target>City</target>
+            </trans-unit>
+            <!-- traducciones de Provincia -->
+            <trans-unit id="_crear_provincia">
+                <source>_crear_provincia</source>
+                <target>Create State</target>
+            </trans-unit>
+            <trans-unit id="_editar_provincia">
+                <source>_editar_provincia</source>
+                <target>Edit State</target>
+            </trans-unit>
+            <trans-unit id="_ver_provincia">
+                <source>_ver_provincia</source>
+                <target>View State</target>
+            </trans-unit>           
+            <trans-unit id="_listado_provincia">
+                <source>_listado_provincia</source>
+                <target>State List</target>
+            </trans-unit>
+            <trans-unit id="_provincia">
+                <source>_provincia</source>
+                <target>State</target>
+            </trans-unit>
+            <!-- traducciones del menú -->
+            <trans-unit id="_menu_tipos">
+                <source>_menu_tipos</source>
+                <target>Auxiliary Data</target>
+            </trans-unit>
+            <trans-unit id="_menu_tablas">
+                <source>_menu_tablas</source>
+                <target>Tables</target>
+            </trans-unit>
+            <trans-unit id="_menu_tipo_documento">
+                <source>_menu_tipo_documento</source>
+                <target>Identity Document</target>
+            </trans-unit>
+            <trans-unit id="_menu_configuraciones">
+                <source>_menu_configuraciones</source>
+                <target>Roles and Users</target>
+            </trans-unit>
+            <trans-unit id="_menu_provincias">
+                <source>_menu_provincias</source>
+                <target>States</target>
+            </trans-unit>
+            <trans-unit id="_menu_barrios">
+                <source>_menu_barrios</source>
+                <target>District</target>
+            </trans-unit>                
+            <trans-unit id="_menu_partidos">
+                <source>_menu_partidos</source>
+                <target>Departments</target>
+            </trans-unit>       
+            <trans-unit id="_menu_localidades">
+                <source>_menu_localidades</source>
+                <target>Cities</target>
+            </trans-unit>
+            <trans-unit id="_menu_usuario">
+                <source>_menu_usuario</source>
+                <target>Users</target>
+            </trans-unit>
+            <trans-unit id="_menu_resultados">
+                <source>_menu_resultados</source>
+                <target>Results</target>
+            </trans-unit>             
+            <trans-unit id="_menu_usuario_perfil">
+                <source>_menu_usuario_perfil</source>
+                <target>User Roles</target>
+            </trans-unit>
+           <trans-unit id="_menu_empresas">
+                <source>_menu_empresas</source>
+                <target>Enterprises</target>
+            </trans-unit>
+            <trans-unit id="_menu_bancas">
+                <source>_menu_bancas</source>
+                <target>Banks</target>
+            </trans-unit>
+           <trans-unit id="_menu_posnets">
+                <source>_menu_posnets</source>
+                <target>Posnets</target>
+            </trans-unit>
+            <trans-unit id="_creado_por">
+                <source>_creado_por</source>
+                <target>Created By</target>
+            </trans-unit>              
+            <trans-unit id="_modificado_por">
+                <source>_modificado_por</source>
+                <target>Modified By</target>
+            </trans-unit>              
+            <trans-unit id="_fecha_creado">
+                <source>_fecha_creado</source>
+                <target>Date Created</target>
+            </trans-unit>              
+            <trans-unit id="_fecha_modificado">
+                <source>_fecha_modificado</source>
+                <target>Date Modified</target>
+            </trans-unit>
+            <trans-unit id="_fecha_invalida">
+                <source>_fecha_invalida</source>
+                <target>Invalid Date</target>
+            </trans-unit>            
+            <trans-unit id="_si">
+                <source>_si</source>
+                <target>YES</target>
+            </trans-unit>              
+            <trans-unit id="_no">
+                <source>_no</source>
+                <target>NO</target>
+            </trans-unit>
+            <trans-unit id="_desea_eliminar">
+                <source>_desea_eliminar</source>
+                <target>Do you wish to delete</target>
+            </trans-unit>
+            <trans-unit id="_menu_juegos">
+                <source>_menu_juegos</source>
+                <target>Games Management</target>
+            </trans-unit>            
+            <trans-unit id="_menu_juegoplantilla">
+                <source>_menu_juegoplantilla</source>
+                <target>Game Templates</target>
+            </trans-unit>
+            <trans-unit id="_menu_sorteo_plantilla">
+                <source>_menu_sorteo_plantilla</source>
+                <target>Draw Templates</target>
+            </trans-unit>
+            <trans-unit id="_menu_modalidad">
+                <source>_menu_modalidad</source>
+                <target>Modalities</target>
+            </trans-unit>
+            <trans-unit id="_menu_apuesta">
+                <source>_menu_apuesta</source>
+                <target>Bets</target>
+            </trans-unit>
+            <trans-unit id="_menu_cancelar_lote">
+                <source>_menu_cancelar_lote</source>
+                <target>Cancel Concrete Games</target>
+            </trans-unit>            
+            <trans-unit id="_agregar">
+                <source>_agregar</source>
+                <target>Add</target>
+            </trans-unit>
+            <trans-unit id="_menu_sorteos">
+                <source>_menu_sorteos</source>
+                <target>Mng.Draws</target>
+            </trans-unit>
+            <trans-unit id="_menu_sorteo">
+                <source>_menu_sorteo</source>
+                <target>Draws</target>
+            </trans-unit>
+            <trans-unit id="_fecha">
+                <source>_fecha</source>
+                <target>Date</target>
+            </trans-unit>
+            <trans-unit id="_resultado">
+                <source>_resultado</source>
+                <target>Result</target>
+            </trans-unit>
+            <trans-unit id="_id">
+                <source>_id</source>
+                <target>ID</target>
+            </trans-unit>
+            <trans-unit id="_moneda">
+                <source>_moneda</source>
+                <target>U$S</target>
+            </trans-unit>
+            <trans-unit id="_monto">
+                <source>_monto</source>
+                <target>Amount</target>
+            </trans-unit>
+            <trans-unit id="_direccion">
+                <source>_direccion</source>
+                <target>Address</target>
+            </trans-unit>
+            <trans-unit id="_desarrollado_por">
+                <source>_desarrollado_por</source>
+                <target>Developed By</target>
+            </trans-unit>
+            <trans-unit id="_menu_posnets_admin">
+                <source>_menu_posnets_admin</source>
+                <target>Posnets Management</target>
+            </trans-unit>
+            <trans-unit id="_menu_apuestagrupo">
+                <source>_menu_apuestagrupo</source>
+                <target>Group Bets</target>
+            </trans-unit>                        
+        </body>
+    </file>
+</xliff>

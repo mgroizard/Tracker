@@ -1,0 +1,65 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-8">
+        <img src="{{ asset('bundles/gestion/images/carpetas.jpg') }}" height="100%" />
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="well bs-component">
+        <h4>{{ global.app.organizacion_largo }}</h4>
+        <hr>
+<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request" novalidate>
+    <div>
+        {% set errorClass = "" %}
+        {% if invalid_username is defined %}
+          {% set errorClass = "has-error" %}
+            <div class="alert alert-danger" role="alert">
+                <i class="fa fa-ban"></i> {{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}
+            </div>
+
+        {% endif %}
+<div class="input-group {{errorClass}}">
+  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+   <input type="text" id="username" class="form-control" name="username" required="required" placeholder="Nombre de usuario ó email" />
+</div>
+<span class="help-block">Se le enviará un correo electrónico con las indicaciones para completar esta solicitud.</span>
+    </div>
+    <div>
+    <br>
+        <a href="{{path('homepage')}}" class="btn btn-default" title="Cancelar">Cancelar</a>
+        <input class="btn btn-primary" type="submit" value="Enviar solicitud" />
+    </div>
+</form>
+      </div>
+</div>
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+{# {% trans_default_domain 'FOSUserBundle' %}
+<div class="well bs-component col-lg-4 col-md-offset-4">
+<legend>Reestablecer contraseña</legend>
+<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+    <div>
+        {% if invalid_username is defined %}
+            <p>{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}</p>
+        {% endif %}
+<div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+   <input type="text" id="username" class="form-control" name="username" required="required" placeholder="Nombre de usuario ó email" />
+</div>
+<span class="help-block">Se le enviará un correo electrónico con las indicaciones para completar esta solicitud.</span>
+    </div>
+    <div>
+    <br>
+        <input class="btn btn-default" type="submit" value="Enviar" />
+    </div>
+</form>
+ </div> #}

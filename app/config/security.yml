@@ -1,0 +1,45 @@
+security:
+    always_authenticate_before_granting: true
+    access_denied_url: /error403
+    encoders:
+        Aleste\SeguridadBundle\Entity\Usuario: #plaintext
+            algorithm:   sha512
+            iterations: 10
+            encode-as-base64: true
+
+    role_hierarchy:
+        ROLE_ADMINISTRACION: ROLE_GESTION
+        ROLE_GESTION: ROLE_CONSULTAS
+        ROLE_CONSULTAS: ROLE_USER
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMINISTRACION
+
+    providers:
+        user_db:
+            entity: { class: Aleste\SeguridadBundle\Entity\Usuario, property: usuario }
+
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        login_firewall:
+            pattern:   ^/login$
+            anonymous: ~
+
+        secured_area:
+            pattern:    ^/
+            form_login:
+                check_path: /login_check
+                login_path: /login
+                default_target_path: /tracker
+                always_use_default_target_path: false
+            logout:
+                path:   /logout
+                target: /login
+            anonymous: ~
+    
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/tracker, roles: ROLE_USER }
+        - { path: ^/seguridad, roles: ROLE_ADMIN}

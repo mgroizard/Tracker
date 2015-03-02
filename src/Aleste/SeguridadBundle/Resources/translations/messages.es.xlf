@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="Seg_1">
+                <source>Next</source>
+                <target>Siguiente</target>
+            </trans-unit>
+            <trans-unit id="Seg_2">
+                <source>Previous</source>
+                <target>Anterior</target>
+            </trans-unit>
+            <trans-unit id="Seg_3">
+                <source>Bad credentials</source>
+                <target>Error de Usuario y/o Contraseña</target>
+            </trans-unit>
+            <trans-unit id="Seg_4">
+                <source>_nombre_usuario</source>
+                <target>Nombre de Usuario</target>
+            </trans-unit>
+            <trans-unit id="Seg_5">
+                <source>_contraseña</source>
+                <target>Contraseña</target>
+            </trans-unit>
+            <trans-unit id="Seg_6">
+                <source>_captcha_cerrado</source>
+                <target>Cerrado : el formulario no puede ser enviado</target>
+            </trans-unit>
+            <trans-unit id="Seg_7">
+                <source>_captcha_abierto</source>
+                <target>Abierto : el formulario puede ser enviado</target>
+            </trans-unit>
+            <!-- traducciones de Usuario -->
+            <trans-unit id="_crear_usuario">
+                <source>_crear_usuario</source>
+                <target>Crear Usuario</target>
+            </trans-unit>
+            <trans-unit id="_editar_usuario">
+                <source>_editar_usuario</source>
+                <target>Editar Usuario</target>
+            </trans-unit>
+            <trans-unit id="_ver_usuario">
+                <source>_ver_usuario</source>
+                <target>Ver Usuario</target>
+            </trans-unit>           
+            <trans-unit id="_listado_usuario">
+                <source>_listado_usuario</source>
+                <target>Listado de Usuarios</target>
+            </trans-unit>
+            <trans-unit id="_usuario">
+                <source>_usuario</source>
+                <target>Usuario</target>
+            </trans-unit>
+            <trans-unit id="_usuario_u_apellido">
+                <source>_usuario_u_apellido</source>
+                <target>Usuario u Apellido</target>
+            </trans-unit>             
+            <trans-unit id="_ultimo_ingreso">
+                <source>_ultimo_ingreso</source>
+                <target>Último Ingreso</target>
+            </trans-unit>            
+            <trans-unit id="_perfiles_asignados">
+                <source>_perfiles_asignados</source>
+                <target>Perfiles Asignados</target>
+            </trans-unit>            
+            <trans-unit id="_cambiar_contraseña">
+                <source>_cambiar_contraseña</source>
+                <target>Cambiar Contraseña</target>
+            </trans-unit>
+            <trans-unit id="_cerrar_sesion">
+                <source>_cerrar_sesion</source>
+                <target>Salir</target>
+            </trans-unit>
+           <trans-unit id="_contraseña_actual">
+                <source>_contraseña_actual</source>
+                <target>Contraseña Actual</target>
+            </trans-unit>
+            <trans-unit id="_contraseña_nueva">
+                <source>_contraseña_nueva</source>
+                <target>Contraseña Nueva</target>
+            </trans-unit>
+            <trans-unit id="_contraseña_nueva_confirmar">
+                <source>_contraseña_nueva_confirmar</source>
+                <target>Confirmar Nueva Contraseña</target>
+            </trans-unit>
+            <trans-unit id="_contraseña">
+                <source>_contraseña</source>
+                <target>Contraseña</target>
+            </trans-unit>  
+            <trans-unit id="_perfiles_usuario">
+                <source>_perfiles_usuario</source>
+                <target>Perfiles</target>
+            </trans-unit>
+            <trans-unit id="_contraseña_no_coincide">
+                <source>_contraseña_no_coincide</source>
+                <target>Las contraseñas no coinciden</target>
+            </trans-unit>            
+            <trans-unit id="_acceso_denegado">
+                <source>_acceso_denegado</source>
+                <target>Acceso Denegado</target>
+            </trans-unit>
+            <trans-unit id="_ingresar">
+                <source>_ingresar</source>
+                <target>Ingresar</target>
+            </trans-unit>
+            <!-- traducciones de Rol -->
+            <trans-unit id="_crear_rol">
+                <source>_crear_rol</source>
+                <target>Crear Rol de Usuario</target>
+            </trans-unit>
+            <trans-unit id="_editar_rol">
+                <source>_editar_rol</source>
+                <target>Editar Rol de Usuario</target>
+            </trans-unit>
+            <trans-unit id="_ver_rol">
+                <source>_ver_rol</source>
+                <target>Ver Rol de Usuario</target>
+            </trans-unit>           
+            <trans-unit id="_listado_rol">
+                <source>_listado_rol</source>
+                <target>Listado de Roles de Usuarios</target>
+            </trans-unit>
+            <trans-unit id="_rol">
+                <source>_rol</source>
+                <target>Rol de Usuario</target>
+            </trans-unit>
+            <trans-unit id="_usuarios_asignados">
+                <source>_usuarios_asignados</source>
+                <target>Usuarios Asignados</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

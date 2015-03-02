@@ -1,0 +1,91 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    {% block navbar %}
+          {% include 'TrackerBundle:Gestion:_menu.html.twig' %}
+	 {% endblock %}
+	 <!-- Begin page content -->
+    <div class="container-fluid">
+		{% block container %}
+			{% block flashmsg %}
+				<div class="row">
+					<div class="col-md-12">
+			      		{% for type, messages in app.session.flashbag.all() %}
+	            			{% for key, message in messages %}
+	            			{% set class=""%}
+	            			{% if type == 'fos_user_success' or type == 'success' %}
+	            				{% set class="alert alert-success"%}
+	            				{% set iconType="fa fa-check"%}
+	            			{% else %}
+	            				{% set class="alert alert-danger"%}
+	            				{% set iconType="fa fa-times"%}
+	            			{% endif %}
+				                <div class="flash-{{ type }} {{class}}">
+				                    <i class="{{iconType}}"></i> {{ message|trans({}, 'admin')|raw }}
+				                </div>
+	            			{% endfor %}
+        				{% endfor %}
+        			</div>
+				</div>
+			{% endblock %}
+			<div class="row">
+				<div class="col-md-12">{% block mensaje %}{% endblock %}</div>
+			</div>
+		<div class="row">
+			<div class="col-md-12">
+			{% block content %}
+				{% block fos_user_content %} {% endblock fos_user_content %}
+			{% endblock %}
+			</div>
+		</div>
+		{% endblock %}
+    </div>
+
+    <div id="footer">
+      <div class="container-fluid">
+        <p class="text-muted">
+        	{% block footer %}UEC - {{ global.app.organizacion_largo }} - {{ global.app.version }} - {{ "now"|date("Y") }}
+		 {% endblock %}
+        </p>
+      </div>
+    </div>
+
+	{#  <div class="container-fluid">
+		{% block container %}
+			{% block flashmsg %}
+				<div class="row">
+					<div class="col-md-12">
+			      		{% for type, messages in app.session.flashbag.all() %}
+	            			{% for key, message in messages %}
+	            			{% set class=""%}
+	            			{% if type == 'fos_user_success' or type == 'success' %}
+	            				{% set class="alert alert-success"%}
+	            			{% else %}
+	            				{% set class="alert alert-danger"%}
+	            			{% endif %}
+				                <div class="flash-{{ type }} {{class}}">
+				                    {{ message|trans({}, 'admin') }}
+				                </div>
+	            			{% endfor %}
+        				{% endfor %}
+        			</div>
+				</div>
+			{% endblock %}
+		<div class="row">
+			<div class="col-md-12">
+			{% block content %}
+				{% block fos_user_content %} {% endblock fos_user_content %}
+			{% endblock %}
+			</div>
+		</div>
+		{% endblock %}
+
+	</div>
+
+	 <footer>
+		{% block footer %} <p class="text-center">
+		 {{ global.app.organizacion_largo }} - {{ global.app.version }} - {{ "now"|date("Y") }}
+		 </p>{% endblock %}
+	</footer>	  #}
+
+{% endblock %}
+

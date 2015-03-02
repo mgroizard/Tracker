@@ -1,0 +1,42 @@
+{% extends "TrackerBundle::layout.html.twig" %}
+{% form_theme form 'AlesteGeneratorBundle:widget:fields.html.twig' %}
+ 
+{% block title %}{{ '%entity% creation'|trans({'%entity%': 'Persona'}, 'admin') }}{% endblock %}
+
+{% block content %}
+
+<div class="well well-sm bs-component col-lg-6">
+<legend>{{ '%entity% creation'|trans({'%entity%': 'Persona'}, 'admin') }}</legend>
+
+    <form action="{{ path('persona_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+        <p>
+            <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> {{ 'Save'|trans({}, 'admin') }}</button>
+        </p>
+    </form>
+
+        
+    <div class="btn-group record_actions">
+
+        <a class="btn btn-info" href="{{ path('persona') }}">
+            <i class="fa fa-list"></i> {{ 'Back to the list'|trans({}, 'admin') }}
+        </a>
+
+
+
+    </div>
+
+  </div>
+
+{% endblock %}
+{% block otherJavascripts%}
+     <script type="text/javascript">
+
+        (function($) {
+	    // mio
+             $(document).ready(function(){
+                $('body').delegate('.datepicker', 'focusin', function(){$(this).datepicker({'changeMonth': true,'changeYear': true});});
+             });
+            })(jQuery);
+    </script>
+{% endblock %}

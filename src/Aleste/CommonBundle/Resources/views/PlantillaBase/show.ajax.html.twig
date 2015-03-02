@@ -1,0 +1,7 @@
+{% extends "CommonBundle::ajax_layout.html.twig" %}
+{% block show %}
+   <table class="table table-bordered table-striped table-hover">
+         {% block datosShow %}{% endblock %}
+         {% include 'CommonBundle:PlantillaBase:auditoria.show.html.twig'%}
+   </table>
+{% endblock %}

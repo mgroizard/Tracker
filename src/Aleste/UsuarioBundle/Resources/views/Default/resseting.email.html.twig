@@ -1,0 +1,35 @@
+{% block subject %}Recuperación de contraseña{% endblock %}
+
+{% block body_text %}
+{% autoescape false %}
+Hola {{ user.username }} !
+
+Podrá recuperar su contraseña accediendo al siguiente enlace {{ confirmationUrl }}
+
+Muchas gracias,
+el Sistema de Gestión de Documentación
+{% endautoescape %}
+{% endblock %}
+
+{% block body_html %}
+<h3>¿Cómo restablecer su contraseña para acceder al Sistema de Gestión de Documentación y Expedientes?</h3>
+
+<p>Hola, {{user.persona.nombre}} {{user.persona.apellido}}:</p>
+<p>Para recuperar su cuenta del Sistema de Gestión de Documentación, deberá crear una nueva contraseña.</p>
+<p>Es simple:</p>
+<p>
+<ol>
+<li>Haga clic en el vínculo que se muestra a continuación.</li>
+<li>Genere su nueva contraseña.</li>
+</ol>
+</p>
+<p><a href="{{ confirmationUrl }}">Genere su nueva contraseña ahora</a></p>
+<p><b>¿No funciona el vínculo?</b> Copie y pegue el siguiente vínculo en el navegador:</p>
+<p>{{ confirmationUrl }}</p>
+<p>
+	Si no nos ha solicitado ayuda para restablecer su contraseña, comuníquese de inmediato con el administrador del sistema. 
+</p>
+<p>Muchas gracias,<br>
+el <b>Sistema de Gestión de Documentación</b></p>
+
+{% endblock %}

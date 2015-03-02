@@ -1,0 +1,30 @@
+seguridad:
+    resource: "@SeguridadBundle/Resources/config/routing.yml"
+    prefix:  /seguridad
+    
+tracker:
+    resource: "@TrackerBundle/Controller/"
+    type:     annotation
+    prefix:   /tracker
+
+common:
+    resource: "@CommonBundle/Resources/config/routing.yml"
+    prefix:  /common
+    
+login:
+    pattern: /login
+    defaults: { _controller: SeguridadBundle:Security:login }
+
+endsession:
+    pattern: /endsession
+    defaults: { _controller: SeguridadBundle:Default:endSession }
+
+login_check:
+    pattern: /login_check
+
+logout:
+    pattern: /logout
+
+error403:
+    pattern: /error403
+    defaults: { _controller: "SeguridadBundle:Security:accessDenied" }    

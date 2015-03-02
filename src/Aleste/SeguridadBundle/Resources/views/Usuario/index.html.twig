@@ -1,0 +1,60 @@
+{% extends "TrackerBundle::layout.html.twig" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <h4 class="pull-left">Listado de Usuarios</h4>
+    <a class="btn btn-info pull-right" href="{{ path('usuario_new') }}">
+      <i class="fa fa-plus"></i> {{ '_nuevo'|trans }}
+    </a>
+  </div>      
+<div id="deleteWindow" name="deleteWindow" class="ui-widget"></div>
+  <table class="table table-bordered table-striped table-hover">
+
+    <thead>
+      <tr>
+        <th>{{'_id'|trans}}</th>
+        <th>{{'_nombre'|trans}}</th>
+        <th{% if entities.isSorted('a.usuario') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(entities, '_nombre_usuario'|trans, 'a.usuario') }}</th>
+        <th>{{'_acciones'|trans}}</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td>{{ entity.id }}</td>
+            <td>{{ entity.persona }}</td>
+            <td>{{ entity.usuario }}</td>
+            <td>
+                  <a class="btn btn-default btn-sm" href="{{ path('usuario_show', {'id': entity.id}) }}">
+                      <i class="fa fa-search"></i> 
+                  </a>
+                  <a class="btn btn-default btn-sm" href="{{ path('usuario_edit', {'id': entity.id}) }}">
+                      <i class="fa fa-edit"></i> 
+                  </a>
+                  <a class="btn btn-default btn-sm" onclick="deleteWindow('{{ path('usuario_list_delete', { 'id': entity.id }) }}')" href="#">
+                      <i class="fa fa-trash-o"></i> 
+                  </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}
+
+{% block otherJavascripts %}
+  <link rel="stylesheet" href="{{ asset('bundles/common/js/jquery-ui-themes-1.10.4/themes/smoothness/jquery-ui.css')}}">
+  <script src="{{ asset('bundles/common/js/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js') }}"></script>
+  <script src="{{ asset('bundles/common/js/jquery-ui-1.10.4/ui/i18n/jquery-ui-i18n.js') }}"></script>
+  <script type="text/javascript">
+   $(document).ready(function(){ $(function() {$("#deleteWindow").dialog({autoOpen: false,show: "blind",hide: "blind",modal: true,width: 500,});}); });
+   function deleteWindow(url)
+   {
+      $("#deleteWindow").html('<img src="{{ asset('bundles/common/images/ajax-loader.gif')}}" alt="{{'_cargando'|trans}}" title="{{'_cargando'|trans}}"/>');
+      $("#deleteWindow").dialog("option", "title","{{'_eliminar'|trans}}");
+      $("#deleteWindow").dialog("open");
+      $("#deleteWindow").load(url);
+   }
+</script>
+{% endblock %}

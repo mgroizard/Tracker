@@ -1,0 +1,28 @@
+Previous: Anterior
+Next: Siguiente
+nroOrigen: Nro. Origen
+respuesta: Respuesta
+programa: Programa
+referencia: Referencia
+extracto: Extracto
+fecha: Fecha Documento
+incluyeCd: "Incluye Cd/Dvd"
+incluyeFactura: "Incluye Factura"
+incluyeInforme: "Incluye Informe/Certificado"
+tipoDocumento: Tipo
+entidadRemitente: Entidad Remitente
+personaRemitente: Persona Remitente
+entidadDestinatario: Entidad Destinataria
+personaDestinatario: Persona Destinatario
+prioridad: Prioridad
+asunto: Asunto
+fechaArchivo: Fecha de Archivo
+fechaProceso: Fecha Ingreso/Egreso
+numero: Número
+expCaracteristica: Característica
+expNumero: Número
+expAnio: Año
+expAlcance: Alcance
+expCuerpo: Cuerpo
+expFojasDesde: Fojas Desde
+expFojasHasta: Fojas Hasta

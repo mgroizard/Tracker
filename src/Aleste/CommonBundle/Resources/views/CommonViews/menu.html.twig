@@ -1,0 +1,11 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="{{path('loteria_homepage')}}">{{'_nombre_sistema'|trans}}</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        {{ knp_menu_render('CommonBundle:Builder:mainMenu', { 'style': 'navbar', 'allow_safe_labels': true  }) }}
+        {{ knp_menu_render('CommonBundle:Builder:menuUsuario', { 'style': 'navbar-right', 'allow_safe_labels': true }) }}
+        {{ knp_menu_render('CommonBundle:Builder:menuIdiomas', { 'style': 'navbar-right', 'allow_safe_labels': true }) }} 
+    </div>
+</nav>
+

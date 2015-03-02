@@ -1,0 +1,41 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div class="row">
+	<div class="col-lg-5 col-lg-offset-3">
+		<div class="panel panel-default">
+	      <div class="panel-heading">
+	        <h3 class="panel-title">Información de mi cuenta</h3>
+	      </div>
+	      <div class="panel-body">
+	      <table class="table table-bordered">
+	      	<tr>
+	      		<td><i class="fa fa-user"></i> Apellido y Nombre</td>
+	      		<td>{{ app.user.persona.apellido }}, {{ app.user.persona.nombre }}</td>
+	      	</tr>
+	      	<tr>
+	      		<td><i class="fa fa-envelope"></i> Email</td>
+	      		<td>{{ app.user.email }}</td>
+	      	</tr>
+	      	<tr>
+	      		<td><i class="fa fa-key"></i> Usuario del sistema</td>
+	      		<td>{{ app.user }}</td>
+	      	</tr>
+	      	<tr>
+	      		<td><i class="fa fa-sitemap"></i> Coordinaciones</td>
+	      		<td>
+	      			<ul>
+	      				{% for item in app.user.persona.entidades %}
+	      				<li>{{item}}</li>
+	      				{% endfor %}
+	      			</ul>
+	      		</td>
+	      	</tr>
+	      	<tr>
+	      		<td><i class="fa fa-calendar"></i> Último acceso</td>
+	      		<td>{{ app.user.lastLogin|date('d-m-Y H:m:i')}}</td>
+	      	</tr>
+	      </table>
+	        <p class="text-center"><a class="btn btn-primary" role="button" href="{{ path('fos_user_change_password') }}">Cambiar contraseña</a></p>
+	      </div>
+		</div>
+	</div>
+</div>

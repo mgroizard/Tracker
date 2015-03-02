@@ -1,0 +1,33 @@
+{% extends "TrackerBundle::layout.html.twig" %}
+
+{% form_theme edit_form 'AlesteGeneratorBundle:widget:fields.html.twig' %}   
+{% block content %}
+   <div class="container">
+    <div class="row">
+      <h4 class="pull-left">{{'_editar_rol'|trans}} "{{entity}}"</h4>
+      <div class="pull-right">
+      <a class="btn btn-warning" href="{{ path('rol_filter') }}">
+	<i class="fa fa-arrow-left"></i> {{ '_volver_listado'|trans }}
+      </a>
+      <a class="btn btn-info" href="{{ path('rol_new') }}">
+        <i class="fa fa-plus"></i> {{ '_nuevo'|trans }}
+      </a>
+      </div>
+     </div>
+  <form class="form-horizontal well" action="{{ path('rol_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+	<div class="form-group">
+	 <div class="col-lg-2 control-label">{{ form_label(edit_form.nombre)}}</div>
+	 <div class="col-lg-6">{{ form_widget(edit_form.nombre)}}</div>
+	 <div class="col-lg-2">{{ form_errors(edit_form.nombre)}}</div>
+	</div>
+        {{form_rest(edit_form)}}
+
+        <div class="col-sm-offset-2">	 
+          <button class="btn btn-success">
+	    {{'_guardar'|trans}}
+	  </button>
+	</div>
+       </div>
+    </form>
+</div><!-- <div class="container"-->
+{% endblock %}

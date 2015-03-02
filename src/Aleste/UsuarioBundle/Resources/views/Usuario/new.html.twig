@@ -1,0 +1,49 @@
+{% extends "GestionBundle::layout.html.twig" %}
+{% form_theme form 'AlesteGeneratorBundle:widget:fields.html.twig' %}
+
+{% block title %}Nuevo usuario{% endblock %}
+
+{% block content %}
+
+<div class="well well-sm  bs-component col-lg-6">
+<legend>Nuevo usuario</legend>  
+  
+    <form action="{{ path('gestion_usuario_create') }}" method="post" {{ form_enctype(form) }} >
+    	<div class="row">
+    		<div class="col-md-6">{{ form_row(form.apellido) }}</div>
+    		<div class="col-md-6">{{ form_row(form.nombre) }}</div>
+    	</div>
+        <div class="row">
+            <div class="col-md-2">{{ form_row(form.tipoDocumento) }}</div>
+            <div class="col-md-4">{{ form_row(form.nroDoc) }}</div>
+            <div class="col-md-6">{{ form_row(form.sexo) }}</div>
+        </div>   
+        <div class="row">
+            <div class="col-md-12">{{ form_row(form.coordinaciones) }}</div>            
+        </div>      
+    	<div class="row">
+    		<div class="col-md-6">{{ form_row(form.username) }}</div>
+    		<div class="col-md-6">{{ form_row(form.email) }}</div>
+    	</div>   
+    	<div class="row">
+    		<div class="col-md-6">{{ form_row(form.roles) }}</div>
+    		<div class="col-md-6">{{ form_row(form.grupos) }}</div>
+    	</div>       	 	
+    	<div class="row">
+    		<div class="col-md-3">{{ form_row(form.enabled) }}</div>
+            <div class="col-md-3">{{ form_row(form.recibeNotificaciones) }}</div>
+    		<div class="col-md-6">{{ form_row(form.password) }}</div>
+    	</div>       	 	    	
+        {{ form_rest(form) }}
+        <p>            
+            <a class="btn btn-info" href="{{ path('gestion_usuario') }}">
+              <i class="fa fa-list"></i> {{ 'Back to the list'|trans({}, 'admin') }}
+            </a>
+            <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> {{ 'Save'|trans({}, 'admin') }}</button>            
+        </p>
+    </form>
+
+
+</div>
+
+{% endblock %}

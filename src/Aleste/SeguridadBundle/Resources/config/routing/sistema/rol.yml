@@ -1,0 +1,46 @@
+rol:
+    pattern:  /
+    defaults: { _controller: "SeguridadBundle:Rol:index" }
+
+rol_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SeguridadBundle:Rol:show" }
+
+rol_new:
+    pattern:  /new
+    defaults: { _controller: "SeguridadBundle:Rol:new" }
+
+rol_create:
+    pattern:  /create
+    defaults: { _controller: "SeguridadBundle:Rol:create" }
+    requirements: { _method: post }
+
+rol_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SeguridadBundle:Rol:edit" }
+
+rol_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SeguridadBundle:Rol:update" }
+    requirements: { _method: post }
+
+rol_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SeguridadBundle:Rol:delete" }
+    requirements: { _method: post }
+
+rol_list_delete:
+    pattern:  /{id}/list/delete
+    defaults: { _controller: "SeguridadBundle:Rol:deleteList" }
+
+rol_filter:
+    pattern:  /filter
+    defaults: { _controller: "SeguridadBundle:Rol:filter" }
+
+rol_revisiones:
+    pattern:  /{id}/revisiones
+    defaults: { _controller: "SeguridadBundle:Rol:revisiones" }
+
+rol_revision_revertir:
+    pattern:  /{id}/revisiones/{revision}/revertir
+    defaults: { _controller: "SeguridadBundle:Rol:revert" }    

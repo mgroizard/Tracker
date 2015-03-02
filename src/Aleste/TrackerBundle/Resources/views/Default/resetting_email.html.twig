@@ -1,0 +1,17 @@
+{% block subject %}Reseteo de Contraseña{% endblock %}
+
+
+{% block body_html %}
+{% autoescape false %}
+StartKit Gestión recibió una solicitud para restablecer la contraseña de la cuenta {{ user.username }} . Para restablecer la contraseña, haz clic en el link de abajo:
+<br>
+{{ confirmationUrl }}	
+<br>
+Si no has solicitado un reseteo de contraseña por favor ignora este correo.
+
+<br>
+Atentamente,
+Sistema de Gestión
+{% endautoescape %}
+
+{% endblock %}

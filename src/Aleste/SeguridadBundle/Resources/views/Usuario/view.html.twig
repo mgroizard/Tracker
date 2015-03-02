@@ -1,0 +1,12 @@
+{% extends "TrackerBundle::layout.html.twig" %}
+
+{% block content %}
+ <div class="container">
+    <div class="row">
+      <h4 class="pull-left">{{'_mis_datos'|trans}}</h4>
+     </div>
+     <table class="table table-bordered table-striped table-hover">
+        {% include 'SeguridadBundle:Usuario:datos.show.html.twig'%}
+     </table>
+</div><!-- <div class="container"-->
+{% endblock %}

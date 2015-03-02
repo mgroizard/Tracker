@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+
+        <title>{% block title %}.:Tracker:.{% endblock %}</title>
+        {% block stylesheets %}                    
+            {% stylesheets '@bootstrap_css'
+                           '@fontawesome_css'                            
+                           '@datepicker_css'
+                           '@main_css' filter='cssrewrite'                        
+            %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>        
+        {% block body %}{% endblock %}        
+        {% block javascripts %}        
+            {% include 'TrackerBundle:Default:_javascripts.html.twig' %}
+            {% block otherJavascripts %}{% endblock %}
+        {% endblock %}
+    </body>
+</html>
+
+
+

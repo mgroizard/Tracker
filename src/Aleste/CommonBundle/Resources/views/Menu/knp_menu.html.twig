@@ -1,0 +1,3 @@
+{# source: http://linkofy.wordpress.com/2012/04/02/using-knpmenubundle-and-twitter-bootstrap/ #}
+{% extends 'knp_menu.html.twig' %}
+{% block label %}{{ item.label|trans(item.getExtra('translation_params', {}), item.getExtra('translation_domain', 'messages')) }}{% endblock %}

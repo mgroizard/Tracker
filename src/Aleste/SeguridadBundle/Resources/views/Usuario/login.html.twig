@@ -1,0 +1,36 @@
+{% extends "SeguridadBundle::layout.html.twig" %}
+{% block contenido %}
+ 
+<div class="container">
+  {% if error %}    
+    <div  class="alert alert-dismissable alert-danger">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+     {{ error.message|trans }}
+    </div>
+  {% endif %}
+      <div class="well col-sm-offset-4 col-lg-4 jumbotron">
+        <form class="form-horizontal" action="{{ path('login_check') }}" method="post">
+           <div class="form-group">
+             <div>
+               <label class="control-label" for="username">{{'_nombre_usuario'|trans}}</label>
+               <input class="form-control" id="username" name="_username" value="{{ last_username }}" type="text"/>
+             </div>
+           </div>
+           <div class="form-group">
+             <div> 
+               <label class="control-label" for="password">{{'_contraseña'|trans}}</label>
+               <input class="form-control" type="password" id="password" name="_password" />
+             </div>
+           </div>
+           <div class="form-group">
+               <div class="QapTcha"></div>
+           </div> 
+           <div class="form-group">
+             <div>
+              <input type="submit" class="btn btn-primary" value="{{'_ingresar'|trans}}" />
+             </div>
+           </div>  
+        </form>
+      </div>
+</div>
+{% endblock %}

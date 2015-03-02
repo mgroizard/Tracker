@@ -1,0 +1,24 @@
+<div class="panel-body">
+<div class="row">
+    <div class="col-md-10"><br><br><legend>Acuse de recibo incorrecto</legend></div>
+    <div class="col-md-2"> <i class="fa fa-exclamation-triangle  fa-5x yellow"></i></div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+    <br>
+    <p>
+        {% set nro = "" %}
+        {% if documento.isExpediente %}
+            {% set nro = "N° "~documento.numeroExpediente %}
+        {% elseif documento.numero != '' %}
+            {% set nro = "N° "~documento.numero~"/"~documento.fecha|date('Y') %} 
+        {% endif %}
+
+        El acuse de recibo del documento tipo <strong>{{ documento.tipoDocumento }} {{ nro }}
+        </strong> con referencia a "<i>{{ documento.referencia }}</i>" correspondiente al programa <strong>{{ documento.programa }}</strong> ya fue efectuado por otro usuario o bien Ud. no está autorizado para realizar esta operación.</p><p>Por favor, ingrese al <a href="{{ path('homepage') }}">Sistema de Gestión</a> para consultar los movimientos.</p>
+
+        <br>
+        
+    </div>
+</div>                        
+</div>

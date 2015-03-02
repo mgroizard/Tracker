@@ -1,0 +1,56 @@
+<div class="panel-body">
+<div class="row">
+    <div class="col-md-10"><br><br><legend>Acuse de recibo efectuado correctamente!</legend></div>
+    <div class="col-md-2"> <i class="fa fa-check-square fa-5x green"></i></div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+    <br>
+    <p>
+        Sr/a. <strong>{{usuario.persona.apellido}} {{usuario.persona.nombre}}</strong>, Ud. ha realizado correctamente el acuse de recibo del siguiente documento:</p>
+        <br>
+        <table class="table table-bordered">
+            <tr>
+                <th>Programa</th>
+                <th>Documento</th>
+                <th>Fecha</th>
+                <th>Remitente</th>                                
+                {% if documento.isExpediente == false %}<th>Destinatario</th>{% endif %}                                
+            </tr>
+            <tr>
+                {% set nro = "" %}
+                {% if documento.isExpediente %}
+                    {% set nro = "N° "~documento.numeroExpediente %}
+                {% elseif documento.numero != '' %}
+                    {% set nro = "N° "~documento.numero~"/"~documento.fecha|date('Y') %} 
+                {% endif %}
+                <td>{{ documento.programa }}</td>
+                <td>{{ documento.tipoDocumento.abreviatura }} {{ nro }}</td>
+                 <td>{{ documento.fecha|date('d-m-Y') }}</td>
+                <td>
+                    <ul>
+                    {% if documento.entidadRemitente is not null %}
+                        <li>{{ documento.entidadRemitente }}</li>
+                    {% endif%}
+                    {% if documento.personaRemitente is not null %}
+                        <li>{{ documento.personaRemitente }}</li>
+                    {% endif %}
+                    </ul>                    
+                </td>
+               {% if documento.isExpediente == false %}
+                <td>
+                                        <ul>
+                    {% if documento.entidadDestinatario is not null %}
+                        <li>{{ documento.entidadDestinatario }}</li>
+                    {% endif%}
+                    {% if documento.personaDestinatario is not null %}
+                        <li>{{ documento.personaDestinatario }}</li>
+                    {% endif %}
+                    </ul>      
+                </td>
+                {% endif %}
+            </tr>
+        </table>
+    </div>
+</div>                        
+</div>

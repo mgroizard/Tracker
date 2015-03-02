@@ -1,0 +1,7 @@
+<td>
+  {% if entity.activo %}
+    <img src="{{ asset('bundles/common/images/famfamfam/accept.png')}}" alt="{{'_activo'|trans}}" title="{{'_activo'|trans}}"/> 
+  {% else %}
+    <img src="{{ asset('bundles/common/images/famfamfam/exclamation.png')}}" alt="{{'_inactivo'|trans}}" title="{{'_inactivo'|trans}}"/> 
+  {% endif %}
+</td>

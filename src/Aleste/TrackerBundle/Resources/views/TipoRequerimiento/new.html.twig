@@ -1,0 +1,24 @@
+{% extends "TrackerBundle::layout.html.twig" %}
+{% form_theme form 'AlesteGeneratorBundle:widget:fields.html.twig' %}
+
+{% block title %}Nuevo Tipo Requerimiento{% endblock %}
+
+{% block content %}
+
+<div class="well well-sm bs-component col-lg-6">
+<legend>Nuevo Tipo Requerimiento</legend>
+
+    <form action="{{ path('tiporequerimiento_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+        <p>
+            <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Guardar</button>
+        </p>
+    </form>
+    <div class="btn-group record_actions">
+        <a class="btn btn-info" href="{{ path('tiporequerimiento') }}">
+            <i class="fa fa-list"></i> Volver
+        </a>
+    </div>
+</div>
+
+{% endblock %}

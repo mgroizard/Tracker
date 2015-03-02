@@ -1,0 +1,76 @@
+{% extends "TrackerBundle::layout.html.twig" %}
+
+{% block title %}Proyectos{% endblock %}
+{% macro thead(name, field, label) %}
+    {% spaceless %}
+        {% set sort = app.session.get('sort.' ~ name) %}
+        {% if sort and sort.field == field %}
+            {% if sort.type == 'DESC' %}
+                <a href="{{ path('proyecto_sort', {field: field, type: 'ASC'}) }}">{{ label }} <i class="fa fa-sort-down"></i></a>
+            {% elseif sort.type == 'ASC' %}
+                <a href="{{ path('proyecto_sort', {field: field, type: 'DESC'}) }}">{{ label }} <i class="fa fa-sort-up"></i></a>
+            {% endif %}
+        {% else %}
+            <a href="{{ path('proyecto_sort', {field: field, type: 'ASC'}) }}">{{ label }} <i class="fa fa-sort"></i></a>
+        {% endif %}
+    {% endspaceless %}
+{% endmacro %}
+
+{% from _self import thead %}
+
+{% block content %}
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Proyectos</h3>
+  </div>
+  <div class="panel-body">
+
+<div class="row">
+  <div class="col-md-11">
+      {% include 'TrackerBundle:Proyecto:filter.html.twig' with {form: form} %}
+  </div>
+</div> 
+
+
+    <table class="table table-striped table-hover table-bordered table-condensed records_list">
+        <thead>
+            <tr>
+                <th scope="col">{{ thead('proyecto', 'id', 'Id') }}</th>
+                <th scope="col">{{ thead('proyecto', 'nombre', 'Nombre') }}</th>
+                <th scope="col">{{ thead('proyecto', 'fecha', 'Fecha Creación') }}</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for proyecto in paginator %}
+            <tr>
+                <td><a href="{{ path('proyecto_show', {id: proyecto.id}) }}">{{ proyecto.id }}</a></td>
+                <td>{{ proyecto.nombre }}</td>
+                <td>{% if proyecto.fecha %}{{ proyecto.fecha|date('Y-m-d') }}{% endif %}</td>
+                <td><div class="btn-group">
+        <a class="btn btn-default btn-sm" href="{{ path('proyecto_show', {'id': proyecto.id}) }}">
+            <i class="fa fa-file"></i> Ver
+        </a>
+        <a class="btn btn-default btn-sm" href="{{ path('proyecto_edit', {'id': proyecto.id}) }}">
+            <i class="fa fa-edit"></i> Editar
+        </a>
+</div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {{ knp_pagination_render(paginator) }}
+    
+    <ul class="new_entry list-unstyled">
+        <li>
+            <a class="btn btn-info" href="{{ path('proyecto_new') }}">
+                <i class="fa fa-plus"></i> Nuevo
+            </a>
+        </li>
+    </ul>
+    
+{% endblock %}

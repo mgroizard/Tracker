@@ -1,0 +1,23 @@
+parameters:
+    app:
+        nombre: "Tracker"
+        organizacion_corto: "Tracker"
+        organizacion_largo: "Sistema de Seguimiento de Tareas"
+        version: "v1.0"
+        icon: "icon-cogs"
+        attach_max_size: 10485760
+    roles:
+        ROLE_CONSULTAS:      "Consulta de Documentación"
+        ROLE_GESTION:        "Gestión de documentos"
+        ROLE_ADMINISTRACION: "Gestión de documentos y parámetros"
+    paginator:
+        page_range: 20                      # default page range used in pagination control
+knp_paginator:
+        default_options:
+            page_name: page                # page query parameter name
+            sort_field_name: sort          # sort field query parameter name
+            sort_direction_name: direction # sort direction query parameter name
+            distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
+        template:
+            pagination: KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig # bootstrap 3 sliding pagination controls template
+            sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig

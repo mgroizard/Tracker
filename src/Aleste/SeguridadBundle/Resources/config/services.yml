@@ -1,0 +1,7 @@
+parameters:
+#    seguridad.example.class: Aleste\SeguridadBundle\Example
+
+services:
+#    seguridad.example:
+#        class: %seguridad.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,7 @@
+CommonBundle_set_locale:
+    pattern:  idioma/{idioma}/change
+    defaults: { _controller: "CommonBundle:Default:idioma" }
+
+hora_servidor:
+    pattern: hora/servidor
+    defaults: { _controller: "CommonBundle:Default:hora" }

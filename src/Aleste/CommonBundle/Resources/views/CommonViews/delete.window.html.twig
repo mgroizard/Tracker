@@ -1,0 +1,11 @@
+<script type="text/javascript">
+   $(document).ready(function(){ $(function() {$("#deleteWindow").dialog({autoOpen: false,show: "blind",hide: "blind",modal: true,width: 500,});}); });
+   function deleteWindow(url)
+   {
+      $("#deleteWindow").html('<img src="{{ asset('bundles/common/images/ajax-loader.gif')}}" alt="{{'_cargando'|trans}}" title="{{'_cargando'|trans}}"/>');
+      $("#deleteWindow").dialog("option", "title","{{'_eliminar'|trans}}");
+      $("#deleteWindow").dialog("open");
+      $("#deleteWindow").load(url);
+   }
+</script>
+<div id="deleteWindow" name="deleteWindow" class="ui-widget"></div>

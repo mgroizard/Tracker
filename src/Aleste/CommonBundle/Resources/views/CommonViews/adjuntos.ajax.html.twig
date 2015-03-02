@@ -1,0 +1,9 @@
+{% extends "CommonBundle::ajax_layout.html.twig" %}
+{% block show %}
+   {% for archivo in entity.adjuntos %}
+    <div class="fontWidget">
+      {% if loop.index > 1%}<hr>{% endif %}
+      {{archivo.nombre}}&nbsp;
+    </div>
+   {% endfor %}
+{% endblock %}

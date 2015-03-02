@@ -1,0 +1,6 @@
+<td>
+    {% if entity.adjuntos|length > 0%}
+       <a onclick="mostrarAdjuntos('{{ path("adjuntos", { "id": entity.id }) }}','Archivos Adjuntos')">
+        <img class="cursor" src="{{ asset('bundles/common/images/famfamfam/attach.png')}}" alt="Archivos Adjuntos" title="Archivos Adjuntos" /></a>
+    {% endif %}&nbsp;
+</td>

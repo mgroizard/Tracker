@@ -1,0 +1,53 @@
+{% extends "TrackerBundle::layout.html.twig" %}
+
+{% form_theme form 'AlesteGeneratorBundle:widget:fields.html.twig' %}    
+{% block content %}
+<div class="container">
+   <div class="row">
+    <h4 class="pull-left">{{'_crear_usuario'|trans}}</h4>
+     <a class="btn btn-warning pull-right" href="{{ path('usuario_filter') }}">
+	 <i class="fa fa-arrow-left"></i> {{ '_volver_listado'|trans }}
+     </a>
+   </div>
+  <div class="row">   
+  <form class="form-horizontal well" action="{{ path('usuario_create') }}" method="post" {{ form_enctype(form) }}>
+	<div class="form-group">
+	 <div class="col-lg-2 control-label">{{ form_label(form.persona)}}</div>
+	 <div class="col-lg-6">{{ form_widget(form.persona)}}</div>
+	 <div class="col-lg-2">{{ form_errors(form.persona)}}</div>
+	</div>
+	<div class="form-group">
+	 <div class="col-lg-2 control-label">{{ form_label(form.usuario)}}</div>
+	 <div class="col-lg-6">{{ form_widget(form.usuario)}}</div>
+	 <div class="col-lg-2">{{ form_errors(form.usuario)}}</div>
+	</div>
+	<div class="form-group">
+	 <div class="col-lg-2 control-label">{{ form_label(form.password)}}</div>
+	 <div class="col-lg-6">{{ form_widget(form.password)}}</div>
+	 <div class="col-lg-2">{{ form_errors(form.password)}}</div>
+	</div>
+        <div class="form-group">
+	 <div class="col-lg-2 control-label">{{ form_label(form.roles)}}</div>
+	 
+	 <div class="col-lg-6">
+	    {% for rol in form.roles%}
+	     <div class="form-group">
+	      <div class="col-lg-3 control-label">{{ form_label(rol)}}</div>
+	      <div class="col-lg-6">{{ form_widget(rol)}}</div>
+	      <div class="col-lg-2">{{ form_errors(rol)}}</div>
+	     </div>
+	    {% endfor %}
+	 </div>
+	 <div class="col-lg-2">{{ form_errors(form.roles)}}</div>
+	</div>
+        {{form_rest(form)}}
+        <div class="col-sm-offset-2">	 
+	  <button class="btn btn-success">
+	   {{'_crear'|trans}} <i class="fa fa-plus"></i> 
+	  </button>
+	</div>
+       </div>
+    </form>
+  </div>
+</div><!-- <div class="container"-->
+{% endblock %}

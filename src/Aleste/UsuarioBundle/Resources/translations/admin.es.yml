@@ -1,0 +1,158 @@
+Create a new entry: "Nuevo"
+Show/hide filters: "Filtros"
+edit: "Editar"
+Edit: "Editar"
+Save: "Guardar"
+Delete: "Borrar"
+Confirm delete: "Borrar"
+You are about to delete an item: "Está por eliminar el registro"
+"this procedure is irreversible": "este proceso es irreversible"
+Do you want to proceed?: "¿Está seguro?"
+Create: "Guardar"
+show: "Mostrar"
+Actions: "Acciones"
+Filter: "Filtrar"
+Reset filters: "Quitar filtros"
+Back to the list: "Volver a la lista"
+Yes: "Si"
+'%entity% list': "Lista de %entity%"
+
+# Group
+group:
+    edit:
+        submit: Actualizar grupo
+    show:
+        name: Nombre de grupo
+    new:
+        submit: Crear grupo
+    flash:
+        updated: El grupo ha sido actualizado
+        created: El grupo ha sido creado
+        deleted: El grupo ha sido borrado
+
+# Security
+"Bad credentials": Nombre de usuario y/o contraseña incorrectos.
+
+security:
+    login:
+        username: "Nombre de usuario:"
+        password: "Contraseña:"
+        remember_me: Recordar
+        submit: Entrar
+        title_user_authentication: "Ingreso al sistema"
+        forgotten_password: "Olvidé la contraseña"
+
+# Profile
+profile:
+    show:
+        username: Nombre de usuario
+        email: Email
+    edit:
+        submit: Actualizar usuario
+    flash:
+        updated: El perfil ha sido actualizado
+
+# Password change
+change_password:
+    submit: Cambiar contraseña
+    flash:
+        success: La contraseña se ha cambiado con éxito
+
+# Registration
+registration:
+    check_email: Se ha enviado un email a %email%. Contiene un enlace de activación que debes presionar para activar tu cuenta.
+    confirmed: Felicidades %username%, tu cuenta está ahora confirmada.
+    back: Volver a la página original.
+    submit: Registrar
+    flash:
+        user_created: El usuario se ha creado satisfactoriamente
+    email:
+        subject: Bienvenido %username%!
+        message: |
+            Hola %username%!
+
+            Para completar la validación de tu cuenta - por favor visita %confirmationUrl%
+
+            Atentamente,
+            el Equipo.
+
+# Password resetting
+resetting:
+    password_already_requested: La contraseña para este usuario ya ha sido solicitada hace menos de 24 horas.
+    check_email: Un email ha sido enviado a %email%. Contiene un enlace de activación que debes presionar para restablecer tu contraseña.
+    request:
+        invalid_username: El usuario o dirección de correo "%username%" no existe.
+        username: "Nombre de usuario:"
+        submit: Restablecer contraseña
+    reset:
+        submit: Cambiar contraseña
+    flash:
+        success: La contraseña se ha cambiado con éxito.
+    email:
+        subject: Bienvenido %username%!
+        message : |
+            Hola %username%!
+
+            Para restablecer tu contraseña - por favor visita %confirmationUrl%
+
+            Atentamente,
+            el Equipo.
+
+# Global strings
+layout:
+    logout: Salir
+    login: Entrar
+    register: Registrar
+    logged_in_as: Identificado como %username%
+
+# Form field labels
+form:
+    group_name: "Nombre de grupo:"
+    username: "Nombre de usuario:"
+    email: "Email:"
+    current_password: "Contraseña actual:"
+    password: "Contraseña:"
+    password_confirmation: "Repita la contraseña:"
+    new_password: "Nueva contraseña:"
+    new_password_confirmation: "Repita la contraseña:"
+
+flash:
+    update:
+        success: Registro actualizado correctamente.
+        error: Error al actualizar el registro. Por favor, verifique los datos ingresados.
+        fojas:
+            success: Se actualizaron las fojas correctamente.
+            error: Error al actualizar las fojas. Por favor, verifique los datos ingresados.
+    create:
+        success: Registro creado correctamente.
+        error: Error al crear el registro. Por favor, verifique los datos ingresados.
+    delete:
+        success: Registro eliminado correctamente.
+        error: Ocurrió un error ó no es posible eliminar el registro.
+        error-relations: No se pudo borrar. El registro posee asociaciones.
+    move:
+        success: Documento enviado correctamente.
+        error: Error al enviar el documento.
+        errorseleccionexp: Debe seleccionar al menos un Expediente.
+    acuse:
+        success: Documento acusado correctamente.
+        error: Error al acusar el documento.
+    archiva:
+        success: Documento archivado correctamente.
+        error: Error al archivar el documento.
+    acuseArchiva:
+        success: Documento acusado y archivado correctamente.
+        error: Error al acusar y archivar el documento.
+    desarchiva:
+        success: Documento desarchivado correctamente.
+        error: Error al desarchivar el documento.
+    anula:
+        success: Se anuló el último movimiento correctamente.
+        error: Error al anular el último movimiento.
+    oculta:
+        success: Se ocultó la copia del documento correctamente.
+        error: Error al ocultar la copia del documento.
+    invalid:
+        error: Operación no permitida.
+
+

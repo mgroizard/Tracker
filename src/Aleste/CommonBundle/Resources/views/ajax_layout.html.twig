@@ -1,0 +1,19 @@
+{% block ajax %}
+    {% include 'CommonBundle:CommonViews:flash.messages.html.twig' %}
+    {% block filtro %}{% endblock %}
+    {% block list %}{% endblock %}
+    {% block show %}{% endblock %}
+    {% block form %}{% endblock %}
+    {% if form is defined %}
+        {% if errores is defined %}
+          <script type="text/javascript">
+            {% for key,mensajes in errores %}
+                $('#{{form.vars.name}}_{{key}}').parent().append("<div id='{{form.vars.name}}_{{key}}_errores' class='alert alert-dismissable alert-danger'></div>");
+                {% for mensaje in mensajes %}
+                    $('#{{form.vars.name}}_{{key}}_errores').append('<button type="button" class="close" data-dismiss="alert">×</button>{{mensaje}}');
+                {% endfor%}
+            {% endfor %}     
+          </script>
+        {% endif %}
+    {% endif%}
+{% endblock %}

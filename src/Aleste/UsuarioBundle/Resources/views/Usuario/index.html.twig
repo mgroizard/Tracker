@@ -1,0 +1,109 @@
+{% extends "GestionBundle::layout.html.twig" %}
+
+{% block title %}{{ '%entity% list'|trans({'%entity%': 'Usuario'}, 'admin') }}{% endblock %}
+{% macro thead(name, field, label) %}
+    {% spaceless %}
+        {% set sort = app.session.get('sort.' ~ name) %}
+        {% if sort and sort.field == field %}
+            {% if sort.type == 'DESC' %}
+                <a href="{{ path('gestion_usuario_sort', {field: field, type: 'ASC'}) }}">{{ label }} <i class="fa fa-sort-down"></i></a>
+            {% elseif sort.type == 'ASC' %}
+                <a href="{{ path('gestion_usuario_sort', {field: field, type: 'DESC'}) }}">{{ label }} <i class="fa fa-sort-up"></i></a>
+            {% endif %}
+        {% else %}
+            <a href="{{ path('gestion_usuario_sort', {field: field, type: 'ASC'}) }}">{{ label }} <i class="fa fa-sort"></i></a>
+        {% endif %}
+    {% endspaceless %}
+{% endmacro %}
+
+{% from _self import thead %}
+
+{% block content %}
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Lista de Usuarios</h3>
+  </div>
+  <div class="panel-body">
+
+<div class="row">
+  <div class="col-md-11">
+      {% include 'UsuarioBundle:Usuario:filter.html.twig' with {form: form} %}
+  </div>
+    <div class="col-md-1">
+        <p class="text-right">
+                <a class="btn btn-info" href="{{ path('gestion_usuario_new') }}">
+                <i class="fa fa-plus"></i> {{ 'Create a new entry'|trans({}, 'admin') }}
+            </a>
+            </p>
+  </div>
+</div>
+{# <div class="page-header">
+<h5>Lista de Usuarios</h5>
+</div>
+
+
+    <div class="row">
+            <div class="col-lg-12">
+                {% include 'UsuarioBundle:Usuario:filter.html.twig' with {form: form} %}
+            </div>
+        </div> #}
+
+    <table class="table table-striped table-hover table-bordered table-condensed records_list">
+        <thead>
+            <tr>
+                <th scope="col">{{ thead('usuario', 'id', 'Id') }}</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">{# {{ thead('usuario', 'nombre', 'Nombre') }} #}Nombre</th>                
+                <th scope="col">{# {{ thead('usuario', 'email', 'Email') }} #}Email</th>
+                <th scope="col">{{ thead('usuario', 'enabled', 'Habilitado') }}</th>
+                <th scope="col">Notificar</th>
+                <th scope="col">Coordinación/Área</th>                
+                <th scope="col">{{ 'Actions'|trans({}, 'admin') }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for usuario in paginator %}
+            <tr>
+                <td><a href="{{ path('gestion_usuario_show', {id: usuario.id}) }}">{{ usuario.id }}</a></td>
+                <td>{{ usuario.persona.apellido }}</td>
+                <td>{{ usuario.persona.nombre }}</td>                
+                <td>{{ usuario.email }}</td>
+
+                <td>{% if usuario.enabled %}<i class="fa fa-check-square-o"></i>{% else %}<i class="fa fa-square-o"></i>{% endif %}</td>
+
+                <td>{% if usuario.recibeNotificaciones %}<i class="fa fa-check-square-o"></i>{% else %}<i class="fa fa-square-o"></i>{% endif %}</td>
+
+                <td>
+                    <ul>
+                        {% for item in usuario.persona.entidades %}
+                            <li>{{item}}</li>
+                         {% endfor %}
+                    </ul>
+                </td>
+
+                <td>                <div class="btn-group">
+                        <a class="btn btn-default btn-sm" href="{{ path('gestion_usuario_show', {'id': usuario.id}) }}">
+                            <i class="fa fa-file"></i> {{ 'show'|trans({}, 'admin') }}
+                        </a>
+                        <a class="btn btn-default btn-sm" href="{{ path('gestion_usuario_edit', {'id': usuario.id}) }}">
+                            <i class="fa fa-edit"></i> {{ 'edit'|trans({}, 'admin') }}
+                        </a>
+                </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {{ knp_pagination_render(paginator) }}
+
+    <ul class="new_entry list-unstyled">
+        <li>
+            <a class="btn btn-info" href="{{ path('gestion_usuario_new') }}">
+                <i class="fa fa-plus"></i> {{ 'Create a new entry'|trans({}, 'admin') }}
+            </a>
+        </li>
+    </ul>
+
+{% endblock %}
