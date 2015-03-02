@@ -15,9 +15,9 @@ class AgregarProyecto extends Simple
     /**
      * Constructor
      */
-    public function __construct(\Doctrine\ORM\EntityManager $em,$objeto = NULL)
+    public function __construct(\Doctrine\ORM\EntityManager $em, $objeto = NULL)
     {
-        $this->em = $em;
+        $this->em       = $em;
         $this->proyecto = $objeto;
     }
     
